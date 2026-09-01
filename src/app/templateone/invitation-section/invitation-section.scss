@@ -1,0 +1,23 @@
+.invitation-section {
+    width: 100%;
+    position: relative;
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+        h3 {
+            margin: 0;
+            font-size: clamp(24px, 4vw, 50px);
+            font-weight: 600;
+            color: #fff;
+        }
+    }
+}
