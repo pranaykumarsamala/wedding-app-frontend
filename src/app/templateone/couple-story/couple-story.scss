@@ -1,6 +1,395 @@
+/* =====================================================
+   COUPLE STORY
+===================================================== */
+
 .couple-story {
+    position: relative;
     width: 100%;
     overflow: hidden;
-    background-position: center;
-    background-repeat: no-repeat;
+    height: 400px;
+}
+
+.story-bg {
+    width: 100%;
+    height: 500px;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.story-bg-mobile {
+    display: none;
+}
+
+.butta {
+    position: absolute;
+    z-index: 5;
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    pointer-events: none;
+    will-change: transform, opacity;
+}
+
+
+/* =====================================================
+   22 BUTTAS
+===================================================== */
+
+.butta-1 {
+    top: 6%;
+    left: 11%;
+}
+
+.butta-2 {
+    top: 14%;
+    left: 24%;
+}
+
+.butta-3 {
+    top: 13%;
+    right: 30%;
+}
+
+.butta-4 {
+    top: 38%;
+    right: 36%;
+}
+
+.butta-5 {
+    top: 18%;
+    left: 7%;
+}
+
+.butta-6 {
+    top: 20%;
+    right: 10%;
+}
+
+.butta-7 {
+    top: 35%;
+    left: 29%;
+}
+
+.butta-8 {
+    bottom: 23%;
+    right: 40%;
+}
+
+.butta-9 {
+    bottom: 18%;
+    left: 23%;
+}
+
+.butta-10 {
+    top: 10%;
+    right: 53%;
+}
+
+.butta-11 {
+    bottom: 8%;
+    left: 8%;
+}
+
+.butta-12 {
+    bottom: 3%;
+    right: 4%;
+}
+
+.butta-13 {
+    top: 31%;
+    left: 12%;
+}
+
+.butta-14 {
+    top: 48%;
+    right: 17%;
+}
+
+.butta-15 {
+    top: 53%;
+    left: 13%;
+}
+
+.butta-16 {
+    top: 55%;
+    right: 6%;
+}
+
+.butta-17 {
+    top: 60%;
+    left: 4%;
+}
+
+.butta-18 {
+    bottom: 24%;
+    right: 23%;
+}
+
+.butta-19 {
+    top: 67%;
+    left: 10%;
+}
+
+.butta-20 {
+    bottom: 12%;
+    right: 16%;
+}
+
+.butta-21 {
+    top: 74%;
+    left: 3%;
+}
+
+.butta-22 {
+    top: 6%;
+    right: 18%;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.couples-desc {
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    width: 75%;
+    max-width: 700px;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #fff;
+    z-index: 10;
+}
+
+.couples-desc p,
+.couples-desc h6,
+.couples-desc h2,
+.couples-desc .divider {
+    will-change: transform, opacity;
+}
+
+.couples-desc p {
+    margin: 0 auto 30px;
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.couples-desc h6 {
+    margin-bottom: 25px;
+    font-size: 25px;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.couples-desc h2 {
+    margin: 15px 0;
+    font-size: 52px;
+    line-height: 1;
+    font-weight: 900;
+}
+
+.divider img {
+    width: 340px;
+    max-width: 100%;
+}
+
+
+/* =====================================================
+   TOY SECTION
+===================================================== */
+
+.toy-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+/* Main image */
+
+.toy-image {
+    // position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    z-index: 1;
+}
+
+
+/* =====================================================
+   TOY BUTTAS
+===================================================== */
+
+.toy-butta {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    z-index: 5;
+    pointer-events: none;
+    will-change: transform, opacity;
+}
+
+
+/*
+   Positions
+   These are relative to toy section
+*/
+
+.toy-butta-1 {
+    left: 2%;
+    top: 2%;
+}
+
+.toy-butta-2 {
+    left: 15%;
+    top: 1%;
+}
+
+.toy-butta-3 {
+    left: 23%;
+    top: 20%;
+}
+
+.toy-butta-4 {
+    left: 33%;
+    top: 5%;
+}
+
+.toy-butta-5 {
+    right: 26%;
+    top: 15%;
+}
+
+.toy-butta-6 {
+    right: 17%;
+    top: 9%;
+}
+
+.toy-butta-7 {
+    right: 10%;
+    top: 22%;
+}
+
+.toy-butta-8 {
+    right: 10%;
+    top: 4%;
+}
+
+.toy-image-mobile {
+    // display: none;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1024px) {
+    .toy-butta {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+    .couple-story {
+        height: 280px;
+    }
+    .story-bg {
+        height: auto;
+        min-height: 100%;
+        object-fit: cover;
+        display: none;
+    }
+    .story-bg-mobile {
+        height: auto;
+        min-height: 100%;
+        object-fit: cover;
+        display: none;
+    }
+    .toy-image {
+        display: none;
+    }
+    .butta {
+        width: 14px;
+        height: 14px;
+    }
+    .couples-desc {
+        width: 88%;
+        top: 10%;
+    }
+    .couples-desc p {
+        font-size: 12px;
+        line-height: 1.3;
+        margin-bottom: 10px;
+    }
+    .couples-desc h6 {
+        font-size: 10px;
+        line-height: 1.3;
+        margin-bottom: 8px;
+    }
+    .couples-desc h2 {
+        font-size: 32px;
+        margin: 12px 0;
+    }
+    .divider img {
+        width: 220px;
+    }
+    .toy-butta {
+        width: 14px;
+        height: 14px;
+    }
+    .toy-butta-1 {
+        left: 8%;
+        top: 18%;
+    }
+    .toy-butta-2 {
+        left: 20%;
+        top: 35%;
+    }
+    .toy-butta-3 {
+        left: 33%;
+        top: 20%;
+    }
+    .toy-butta-4 {
+        left: 46%;
+        top: 42%;
+    }
+    .toy-butta-5 {
+        right: 35%;
+        top: 25%;
+    }
+    .toy-butta-6 {
+        right: 22%;
+        top: 40%;
+    }
+    .toy-butta-7 {
+        right: 10%;
+        top: 22%;
+    }
+    .toy-butta-8 {
+        right: 4%;
+        top: 55%;
+    }
+}
+
+
+/* Small phones */
+
+@media (max-width: 480px) {
+    .toy-butta {
+        width: 11px;
+        height: 11px;
+    }
 }

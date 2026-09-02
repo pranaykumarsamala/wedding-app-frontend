@@ -1,4 +1,33 @@
-<!-- <p>couple-story works!</p> -->
-<section class="couple-story">
+<section #coupleStory class="couple-story">
+    <!-- 22 Decorative Buttas -->
+    <ng-container *ngFor="let butta of buttas; let i = index">
+        <img src="/assets/template-one/one/butta-golden.png" class="butta" [ngClass]="'butta-' + (i + 1)" alt="" />
+    </ng-container>
 
+    <!-- Content -->
+    <div class="couples-desc">
+        <p>
+            With the divine blessings of Almighty, we cordially invite you and your family to share in our joy as we celebrate the sacred wedding ceremony of our children.
+        </p>
+
+        <h6>Do of, Smt. Rajeshwari &amp; Sri Venkata Ramana Rao</h6>
+
+        <h2>Dimple Ahuja</h2>
+
+        <div class="divider">
+            <img src="/assets/template-one/one/name-divider.png" alt="" />
+        </div>
+
+        <h2>Rishi Singh</h2>
+
+        <h6 class="pt-3">Son of, Smt. Padmavathi &amp; Sri Suryanarayana Murthy</h6>
+    </div>
+</section>
+
+<section #toySection class="toy-section">
+    <!-- Decorative toy buttas -->
+    <ng-container *ngFor="let butta of toyButtas; let i = index">
+        <img src="/assets/template-one/one/butta-golden.png" class="toy-butta" [ngClass]="'toy-butta-' + (i + 1)" alt="" />
+    </ng-container>
+    <img src="/assets/template-one/one/toy-border.png" class="w-100" alt="" />
 </section>

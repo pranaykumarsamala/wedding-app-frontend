@@ -1,65 +1,130 @@
 .gallery {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
+  // max-width: 1200px;
+  margin: 0 auto;
+  background-image: url('/assets/template-one/one/photo-frame.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  aspect-ratio: 670 / 510;
+  overflow: hidden;
+  // ==========================================
+  // SLIDER
+  // ==========================================
+  .gallery-slider {
+    position: absolute;
+    top: 22%;
+    left: 16%;
+    width: 67.5%;
+    height: 56%;
     overflow: hidden;
-    .photo-frame {
-        display: block;
-        width: 100%;
-        height: auto;
-        position: relative;
-        z-index: 2;
-        pointer-events: none;
+    border: none;
+  }
+  .carousel-inner {
+    width: 100%;
+    height: 100%;
+  }
+  .carousel-item {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+  }
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+  // ==========================================
+  // ARROWS
+  // ==========================================
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 45px;
+    height: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+    z-index: 5;
+  }
+  .custom-arrow {
+    color: #9c0000;
+    font-family: Arial, sans-serif;
+    font-size: 58px;
+    font-weight: 300;
+    line-height: 1;
+    transition: all 0.3s ease;
+  }
+  .carousel-control-prev:hover .custom-arrow,
+  .carousel-control-next:hover .custom-arrow {
+    transform: scale(1.15);
+  }
+}
+
+// ==========================================
+// TABLET
+// ==========================================
+@media (max-width: 991px) {
+  .gallery {
+    .gallery-slider {
+      top: 21%;
+      left: 15%;
+      width: 70%;
+      height: 59%;
     }
-    .slider {
-        position: absolute;
-        z-index: 1;
-        /*
-        Frame image lo beige/open area
-        */
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        .slide {
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.8s ease;
-            &.active {
-                opacity: 1;
-                visibility: visible;
-            }
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                display: block;
-            }
-        }
-        button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 5;
-            width: 45px;
-            height: 45px;
-            border: 0;
-            border-radius: 50%;
-            background: rgba(0, 0, 0, 0.45);
-            color: #fff;
-            font-size: 28px;
-            cursor: pointer;
-            &:hover {
-                background: rgba(0, 0, 0, 0.7);
-            }
-        }
-        .prev {
-            left: 20px;
-        }
-        .next {
-            right: 20px;
-        }
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 38px;
+      height: 50px;
     }
+    .custom-arrow {
+      font-size: 48px;
+    }
+  }
+}
+
+// ==========================================
+// MOBILE
+// ==========================================
+@media (max-width: 767px) {
+  .gallery {
+    .gallery-slider {
+      top: 21%;
+      left: 15%;
+      width: 70%;
+      height: 59%;
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 30px;
+      height: 45px;
+    }
+    .custom-arrow {
+      font-size: 40px;
+    }
+  }
+}
+
+// ==========================================
+// SMALL MOBILE
+// ==========================================
+@media (max-width: 480px) {
+  .gallery {
+    .gallery-slider {
+      top: 21%;
+      left: 15%;
+      width: 70%;
+      height: 59%;
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 25px;
+      height: 40px;
+    }
+    .custom-arrow {
+      font-size: 34px;
+    }
+  }
 }

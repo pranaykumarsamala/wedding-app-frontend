@@ -1,11 +1,14 @@
 <section class="countdown">
-    <img src="/assets/template-one/countdown .png" alt="Countdown">
+  <img src="/assets/template-one/one/countdown .png" alt="Countdown" />
 
-    <div class="countdown-content">
-        <h3>the countdown begins</h3>
+  <div class="countdown-content">
+    <h3>The Countdown Begins</h3>
 
-        <div class="timer">
-            <p>00:00:00:00</p>
-        </div>
+    <div class="timer">
+      <p>
+        {{ days | number: '2.0-0' }} : {{ hours | number: '2.0-0' }} :
+        {{ minutes | number: '2.0-0' }} : {{ seconds | number: '2.0-0' }}
+      </p>
     </div>
+  </div>
 </section>

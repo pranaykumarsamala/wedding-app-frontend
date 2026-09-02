@@ -1,10 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-    font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', serif;
+  width: 100%;
+  background-image: url('/assets/template-one/one/main-bg-3.png');
+  background-size: 100% auto;
+  background-position: top center;
+  background-repeat: no-repeat;
 }
 
 .playfair-black {
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
 }
+
+// @media (max-width: 480px) {
+//     body {
+//         position: relative;
+//         width: 100%;
+//         overflow-x: hidden;
+//         background-image: url('/assets/template-one/one/main-bg-3.png');
+//         background-size: 100% auto;
+//         background-position: top center;
+//         background-repeat: no-repeat;
+//         min-height: 1200px;
+//     }
+// }
