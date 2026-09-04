@@ -54,8 +54,8 @@
 }
 
 .butta-3 {
-  top: 13%;
-  right: 30%;
+  top: 9%;
+  right: 2%;
 }
 
 .butta-4 {
@@ -79,8 +79,8 @@
 }
 
 .butta-8 {
-  bottom: 23%;
-  right: 40%;
+  bottom: 2%;
+  right: 50%;
 }
 
 .butta-9 {
@@ -89,8 +89,8 @@
 }
 
 .butta-10 {
-  top: 10%;
-  right: 53%;
+  bottom: 0%;
+  right: 22%;
 }
 
 .butta-11 {
@@ -229,7 +229,7 @@
 }
 
 .toy-butta-1 {
-  left: 19%;
+  left: 4%;
   top: 0%;
 }
 
@@ -239,8 +239,8 @@
 }
 
 .toy-butta-3 {
-  left: 23%;
-  top: 20%;
+  left: 19%;
+  top: 7%;
 }
 
 .toy-butta-4 {
@@ -254,8 +254,8 @@
 }
 
 .toy-butta-6 {
-  right: 17%;
-  top: 9%;
+  right: 32%;
+  top: 2%;
 }
 
 .toy-butta-7 {
@@ -314,8 +314,8 @@
 
 .frame-slider {
   position: relative;
-  width: 70%;
-  max-width: 700px;
+  width: 80%;
+  max-width: 800px;
   margin: 5% auto 0;
 }
 
@@ -402,6 +402,29 @@
   height: auto;
   display: block;
   padding-top: 6%;
+}
+
+/* Common Butta */
+
+.final-butta {
+  position: absolute;
+  bottom: 18%;
+  width: 160px;
+  height: auto;
+  z-index: 5;
+}
+
+/* Left */
+
+.final-butta-left {
+  left: 8%;
+}
+
+/* Right */
+
+.final-butta-right {
+  right: 8%;
+  transform: scaleX(-1);
 }
 
 /* =====================================================
@@ -690,6 +713,13 @@
     width: 6px;
     height: 6px;
     margin: 0 3px;
+  }
+  .final-butta {
+    position: absolute;
+    bottom: 14%;
+    width: 60px;
+    height: auto;
+    z-index: 5;
   }
   /* -------------------------
      Borders
