@@ -1,33 +1,112 @@
 <section #coupleStory class="couple-story">
-    <!-- 22 Decorative Buttas -->
-    <ng-container *ngFor="let butta of buttas; let i = index">
-        <img src="/assets/template-one/one/butta-golden.png" class="butta" [ngClass]="'butta-' + (i + 1)" alt="" />
-    </ng-container>
+  <!-- 22 Decorative Buttas -->
+  <ng-container *ngFor="let butta of buttas; let i = index">
+    <img
+      src="/assets/template-one/one/butta-golden.png"
+      class="butta"
+      [ngClass]="'butta-' + (i + 1)"
+      alt=""
+    />
+  </ng-container>
 
-    <!-- Content -->
-    <div class="couples-desc">
-        <p>
-            With the divine blessings of Almighty, we cordially invite you and your family to share in our joy as we celebrate the sacred wedding ceremony of our children.
-        </p>
+  <!-- Content -->
+  <div class="couples-desc">
+    <p>
+      With the divine blessings of the Almighty, we cordially invite you and your family to share in
+      our joy as we celebrate the sacred wedding ceremony of our beloved children.
+    </p>
 
-        <h6>Do of, Smt. Rajeshwari &amp; Sri Venkata Ramana Rao</h6>
+    <h6>Do of, Smt. Rajeshwari & Sri Venkata Ramana Rao</h6>
 
-        <h2>Dimple Ahuja</h2>
+    <h2>Dimple Ahuja</h2>
 
-        <div class="divider">
-            <img src="/assets/template-one/one/name-divider.png" alt="" />
-        </div>
-
-        <h2>Rishi Singh</h2>
-
-        <h6 class="pt-3">Son of, Smt. Padmavathi &amp; Sri Suryanarayana Murthy</h6>
+    <div class="divider">
+      <img src="/assets/template-one/one/name-divider.png" alt="" />
     </div>
+
+    <h2>Rishi Singh</h2>
+
+    <h6 class="pt-3">Son of, Smt. Padmavathi & Sri Suryanarayana Murthy</h6>
+  </div>
 </section>
 
 <section #toySection class="toy-section">
-    <!-- Decorative toy buttas -->
-    <ng-container *ngFor="let butta of toyButtas; let i = index">
-        <img src="/assets/template-one/one/butta-golden.png" class="toy-butta" [ngClass]="'toy-butta-' + (i + 1)" alt="" />
-    </ng-container>
-    <img src="/assets/template-one/one/toy-border.png" class="w-100" alt="" />
+  <!-- Decorative toy buttas -->
+  <ng-container *ngFor="let butta of toyButtas; let i = index">
+    <img
+      src="/assets/template-one/one/butta-golden.png"
+      class="toy-butta"
+      [ngClass]="'toy-butta-' + (i + 1)"
+      alt=""
+    />
+  </ng-container>
+
+  <div class="wedding-celebrations">
+    <!-- Background -->
+
+    <div class="wedding-festivities">
+      <!-- Top Parrots -->
+      <img class="final-toy" src="/assets/template-one/one/final-toy-1.png" class="w-100" alt="" />
+
+      <img class="middle-parrots" src="/assets/template-one/one/middle-parrots-1_.png" alt="" />
+
+      <!-- Main Frame -->
+      <!-- <img class="frame-image" src="/assets/template-one/one/frame- section-1_.png" alt="" /> -->
+      <div id="frameCarousel" class="carousel slide frame-slider" data-bs-ride="carousel">
+        <!-- Slides -->
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <img src="/assets/template-one/one/frame- section-1_.png" class="frame-image" alt="" />
+
+            <!-- Text inside frame -->
+            <div class="frame-content">
+              <h2>Engagement</h2>
+
+              <p>We invite you and your family to celebrate this beautiful occasion with us.</p>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <img src="/assets/template-one/one/frame- section-1_.png" class="frame-image" alt="" />
+
+            <!-- Text inside frame -->
+            <div class="frame-content">
+              <h2>Wedding Ceremony</h2>
+
+              <p>Join us as we celebrate the sacred wedding ceremony of our beloved children.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dots -->
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#frameCarousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+
+          <button
+            type="button"
+            data-bs-target="#frameCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+        </div>
+      </div>
+
+      <!-- Final Background -->
+      <img class="final-bg" src="/assets/template-one/one/FinalBG-2.png" alt="" />
+    </div>
+    <!-- Left Golden Border -->
+    <img class="border-left" src="/assets/template-one/one/golden-border-1.png" alt="" />
+
+    <!-- Right Golden Border -->
+    <img class="border-right" src="/assets/template-one/one/golden-border-1.png" alt="" />
+  </div>
 </section>

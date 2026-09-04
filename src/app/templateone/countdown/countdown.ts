@@ -1,5 +1,17 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { DecimalPipe } from '@angular/common';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-countdown',
@@ -7,34 +19,88 @@ import { DecimalPipe } from '@angular/common';
   templateUrl: './countdown.html',
   styleUrl: './countdown.scss',
 })
-export class Countdown implements OnInit, OnDestroy {
+export class Countdown implements OnInit, AfterViewInit, OnDestroy {
+  @ViewChild('countdownSection', { static: true })
+  countdownSection!: ElementRef<HTMLElement>;
+
   days = 0;
   hours = 0;
   minutes = 0;
   seconds = 0;
 
-  private timerInterval: ReturnType<typeof setInterval> | undefined;
+  private timerInterval!: ReturnType<typeof setInterval>;
 
-  // CHANGE THIS TO YOUR WEDDING DATE & TIME
-  private weddingDate = new Date('2026-12-20T18:00:00').getTime();
+  private ctx!: gsap.Context;
+
+  private weddingDate = new Date(
+    2026,
+    11, // December
+    20,
+    18, // 6 PM
+    0,
+    0,
+  ).getTime();
+
+  constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.updateCountdown();
 
     this.timerInterval = setInterval(() => {
       this.updateCountdown();
+
+      this.cdr.detectChanges();
     }, 1000);
   }
 
+  ngAfterViewInit(): void {
+    const section = this.countdownSection.nativeElement;
+
+    this.ctx = gsap.context(() => {
+      /* ==========================================
+         COUNTDOWN CONTENT
+         BOTTOM -> TOP
+      ========================================== */
+
+      gsap.fromTo(
+        '.countdown-content',
+
+        {
+          y: 250,
+          opacity: 0,
+        },
+
+        {
+          y: 0,
+          opacity: 1,
+          ease: 'power2.out',
+
+          scrollTrigger: {
+            trigger: section,
+
+            start: 'top 90%',
+            end: 'top 40%',
+
+            scrub: 1.5,
+
+            invalidateOnRefresh: true,
+          },
+        },
+      );
+    }, section);
+
+    ScrollTrigger.refresh();
+  }
+
   updateCountdown(): void {
-    const now = Date.now();
-    const difference = this.weddingDate - now;
+    const difference = this.weddingDate - Date.now();
 
     if (difference <= 0) {
       this.days = 0;
       this.hours = 0;
       this.minutes = 0;
       this.seconds = 0;
+
       return;
     }
 
@@ -53,5 +119,7 @@ export class Countdown implements OnInit, OnDestroy {
     if (this.timerInterval) {
       clearInterval(this.timerInterval);
     }
+
+    this.ctx?.revert();
   }
 }

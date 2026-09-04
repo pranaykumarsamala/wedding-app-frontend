@@ -17,6 +17,7 @@
       margin: 0 0 15px;
       font-size: clamp(25px, 3vw, 50px);
       font-weight: 600;
+      color: #9c0000;
     }
     .timer {
       display: flex;
@@ -26,6 +27,7 @@
         margin: 0;
         font-size: 32px;
         font-weight: 700;
+        color: #9c0000;
         letter-spacing: 4px;
       }
     }
@@ -34,6 +36,13 @@
     img {
       height: auto;
       object-fit: unset;
+    }
+    .countdown {
+      .countdown-content {
+        position: absolute;
+        top: 34%;
+        left: 50%;
+      }
     }
   }
 }

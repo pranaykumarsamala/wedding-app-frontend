@@ -5,21 +5,29 @@
 .couple-story {
   position: relative;
   width: 100%;
+  height: 500px;
   overflow: hidden;
-  height: 400px;
 }
+
+/* Desktop Background */
 
 .story-bg {
   width: 100%;
-  height: 500px;
+  height: 100%;
   display: block;
-  position: relative;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
   z-index: 1;
 }
 
 .story-bg-mobile {
   display: none;
 }
+
+/* =====================================================
+   22 BUTTAS
+===================================================== */
 
 .butta {
   position: absolute;
@@ -32,7 +40,7 @@
 }
 
 /* =====================================================
-   22 BUTTAS
+   BUTTA POSITIONS
 ===================================================== */
 
 .butta-1 {
@@ -146,12 +154,12 @@
 }
 
 /* =====================================================
-   CONTENT
+   COUPLE CONTENT
 ===================================================== */
 
 .couples-desc {
   position: absolute;
-  top: 2%;
+  top: 5%;
   left: 50%;
   width: 75%;
   max-width: 700px;
@@ -176,7 +184,7 @@
 }
 
 .couples-desc h6 {
-  margin-bottom: 25px;
+  margin: 0 0 25px;
   font-size: 25px;
   line-height: 1.3;
   font-weight: 700;
@@ -192,6 +200,8 @@
 .divider img {
   width: 340px;
   max-width: 100%;
+  height: auto;
+  display: inline-block;
 }
 
 /* =====================================================
@@ -202,18 +212,6 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-}
-
-/* Main image */
-
-.toy-image {
-  // position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  z-index: 1;
 }
 
 /* =====================================================
@@ -230,14 +228,9 @@
   will-change: transform, opacity;
 }
 
-/*
-   Positions
-   These are relative to toy section
-*/
-
 .toy-butta-1 {
-  left: 2%;
-  top: 2%;
+  left: 19%;
+  top: 0%;
 }
 
 .toy-butta-2 {
@@ -256,8 +249,8 @@
 }
 
 .toy-butta-5 {
-  right: 26%;
-  top: 15%;
+  right: 39%;
+  top: 10%;
 }
 
 .toy-butta-6 {
@@ -266,8 +259,8 @@
 }
 
 .toy-butta-7 {
-  right: 10%;
-  top: 22%;
+  right: 22%;
+  top: 5%;
 }
 
 .toy-butta-8 {
@@ -276,13 +269,218 @@
 }
 
 /* =====================================================
+   WEDDING CELEBRATIONS
+===================================================== */
+
+.wedding-celebrations {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.wedding-festivities {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* =====================================================
+   FINAL TOY
+===================================================== */
+
+.final-toy {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =====================================================
+   MIDDLE PARROTS
+===================================================== */
+
+.middle-parrots {
+  width: 280px;
+  max-width: 35%;
+  height: auto;
+  margin-top: -3%;
+  display: block;
+}
+
+/* =====================================================
+   FRAME SLIDER
+===================================================== */
+
+.frame-slider {
+  position: relative;
+  width: 70%;
+  max-width: 700px;
+  margin: 5% auto 0;
+}
+
+.frame-slider .carousel-inner {
+  position: relative;
+  width: 100%;
+}
+
+.frame-slider .carousel-item {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.frame-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =====================================================
+   FRAME CONTENT
+===================================================== */
+
+.frame-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 65%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 5;
+}
+
+.frame-content h2 {
+  margin: 0 0 30px;
+  font-size: 35px;
+  line-height: 1.1;
+  font-weight: 700;
+  color: #9c0000;
+}
+
+.frame-content p {
+  margin: 0 auto;
+  max-width: 400px;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #000;
+}
+
+/* =====================================================
+   CAROUSEL INDICATORS
+===================================================== */
+
+.frame-slider .carousel-indicators {
+  position: absolute;
+  bottom: -35px;
+  left: 0;
+  right: 0;
+  margin: 0;
+  z-index: 10;
+}
+
+.frame-slider .carousel-indicators button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  margin: 0 5px;
+  opacity: 0.5;
+}
+
+.frame-slider .carousel-indicators button.active {
+  opacity: 1;
+}
+
+/* =====================================================
+   FINAL BACKGROUND
+===================================================== */
+
+.final-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+  padding-top: 6%;
+}
+
+/* =====================================================
+   GOLDEN BORDERS
+===================================================== */
+
+.border-left,
+.border-right {
+  position: absolute;
+  top: 23%;
+  width: 55px;
+  height: auto;
+  z-index: 10;
+  margin: 0;
+}
+
+.border-left {
+  left: 0;
+  transform: scaleX(-1);
+}
+
+.border-right {
+  right: 0;
+}
+
+/* =====================================================
    TABLET
 ===================================================== */
 
 @media (max-width: 1024px) {
+  .couple-story {
+    height: 420px;
+  }
+  .butta {
+    width: 25px;
+    height: 25px;
+  }
+  .couples-desc {
+    width: 80%;
+    top: 6%;
+  }
+  .couples-desc p {
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+  .couples-desc h6 {
+    font-size: 21px;
+    margin-bottom: 18px;
+  }
+  .couples-desc h2 {
+    font-size: 44px;
+  }
+  .divider img {
+    width: 280px;
+  }
   .toy-butta {
     width: 25px;
     height: 25px;
+  }
+  .middle-parrots {
+    width: 220px;
+    max-width: 35%;
+  }
+  .frame-slider {
+    width: 75%;
+  }
+  .frame-content {
+    width: 65%;
+  }
+  .frame-content h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .frame-content p {
+    font-size: 16px;
+  }
+  .border-left,
+  .border-right {
+    width: 45px;
   }
 }
 
@@ -291,23 +489,23 @@
 ===================================================== */
 
 @media (max-width: 768px) {
+  /* -------------------------
+     Couple Story
+  ------------------------- */
   .couple-story {
     height: 280px;
   }
   .story-bg {
-    height: auto;
-    min-height: 100%;
-    object-fit: cover;
     display: none;
   }
   .story-bg-mobile {
-    height: auto;
-    min-height: 100%;
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    display: none;
-  }
-  .toy-image {
-    display: none;
+    z-index: 1;
   }
   .butta {
     width: 14px;
@@ -315,7 +513,7 @@
   }
   .couples-desc {
     width: 88%;
-    top: 10%;
+    top: 8%;
   }
   .couples-desc p {
     font-size: 12px;
@@ -334,49 +532,171 @@
   .divider img {
     width: 220px;
   }
+  /* -------------------------
+     Toy Buttas
+  ------------------------- */
   .toy-butta {
     width: 14px;
     height: 14px;
   }
   .toy-butta-1 {
-    left: 8%;
-    top: 18%;
+    left: 13%;
+    top: 0%;
   }
   .toy-butta-2 {
-    left: 20%;
-    top: 35%;
+    left: 3%;
+    top: 2%;
   }
   .toy-butta-3 {
-    left: 33%;
-    top: 20%;
+    left: 19%;
+    top: 5%;
   }
   .toy-butta-4 {
-    left: 46%;
-    top: 42%;
+    left: 32%;
+    top: 0;
   }
   .toy-butta-5 {
-    right: 35%;
-    top: 25%;
+    right: 39%;
+    top: 2%;
   }
   .toy-butta-6 {
     right: 22%;
-    top: 40%;
+    top: 6%;
   }
   .toy-butta-7 {
     right: 10%;
-    top: 22%;
+    top: 5%;
   }
   .toy-butta-8 {
-    right: 4%;
-    top: 55%;
+    right: 19%;
+    top: 3%;
+  }
+  /* -------------------------
+     Wedding Section
+  ------------------------- */
+  .middle-parrots {
+    width: 180px;
+    max-width: 45%;
+    margin-top: -2%;
+  }
+  .frame-slider {
+    width: 88%;
+    max-width: none;
+    margin-top: 6%;
+  }
+  .frame-content {
+    width: 65%;
+  }
+  .frame-content h2 {
+    font-size: 24px;
+    margin-bottom: 14px;
+  }
+  .frame-content p {
+    font-size: 13px;
+    line-height: 1.3;
+    max-width: 250px;
+  }
+  .frame-slider .carousel-indicators {
+    bottom: -25px;
+  }
+  .frame-slider .carousel-indicators button {
+    width: 7px;
+    height: 7px;
+    margin: 0 4px;
+  }
+  .final-bg {
+    padding-top: 8%;
+  }
+  .border-left,
+  .border-right {
+    width: 30px;
+    top: 23%;
   }
 }
 
-/* Small phones */
+/* =====================================================
+   SMALL PHONES
+===================================================== */
 
 @media (max-width: 480px) {
+  /* -------------------------
+     Couple Story
+  ------------------------- */
+  .couple-story {
+    height: 240px;
+  }
+  .butta {
+    width: 11px;
+    height: 11px;
+  }
+  .couples-desc {
+    width: 90%;
+    top: 7%;
+  }
+  .couples-desc p {
+    font-size: 10px;
+    line-height: 1.25;
+    margin-bottom: 7px;
+  }
+  .couples-desc h6 {
+    font-size: 9px;
+    line-height: 1.2;
+    margin-bottom: 5px;
+  }
+  .couples-desc h2 {
+    font-size: 25px;
+    margin: 8px 0;
+  }
+  .divider img {
+    width: 170px;
+  }
+  /* -------------------------
+     Toy Buttas
+  ------------------------- */
   .toy-butta {
     width: 11px;
     height: 11px;
+  }
+  /* -------------------------
+     Parrots
+  ------------------------- */
+  .middle-parrots {
+    width: 150px;
+    max-width: 50%;
+  }
+  /* -------------------------
+     Frame
+  ------------------------- */
+  .frame-slider {
+    width: 90%;
+    margin-top: 5%;
+  }
+  .frame-content {
+    width: 65%;
+  }
+  .frame-content h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  .frame-content p {
+    font-size: 10px;
+    line-height: 1.25;
+    max-width: 180px;
+  }
+  .frame-slider .carousel-indicators {
+    bottom: -20px;
+  }
+  .frame-slider .carousel-indicators button {
+    width: 6px;
+    height: 6px;
+    margin: 0 3px;
+  }
+  /* -------------------------
+     Borders
+  ------------------------- */
+  .border-left,
+  .border-right {
+    width: 17px;
+    top: 18%;
   }
 }

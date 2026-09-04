@@ -2,7 +2,7 @@ body {
   font-family: 'Playfair Display', serif;
   width: 100%;
   margin: 0;
-  background-image: url('/assets/template-one/one/main-bg-3.png');
+  background-image: url('/assets/template-one/one/FinalBG-3.png');
   background-size: 100% auto;
   background-position: top center;
   background-repeat: no-repeat;
@@ -11,4 +11,15 @@ body {
 .playfair-black {
   font-family: 'Playfair Display', serif;
   font-weight: 900;
+}
+
+/* Mobile Background */
+
+@media (max-width: 480px) {
+  body {
+    background-image: url('/assets/template-one/one/mobile-BG-1.png');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
 }
