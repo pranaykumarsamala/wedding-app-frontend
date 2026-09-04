@@ -41,9 +41,10 @@ export class CoupleStory implements AfterViewInit {
       frameContents.forEach((content) => {
         const title = content.querySelector('h2');
         const description = content.querySelector('p');
+        const location = content.querySelector('span');
 
         // Initial position
-        gsap.set([title, description], {
+        gsap.set([title, description, location], {
           y: 120,
           opacity: 0,
         });
@@ -58,16 +59,27 @@ export class CoupleStory implements AfterViewInit {
           },
         });
 
-        // H2 bottom -> top
+        // H2: bottom -> top
         tl.to(title, {
           y: 0,
           opacity: 1,
           ease: 'power2.out',
         });
 
-        // P bottom -> top
+        // P: bottom -> top
         tl.to(
           description,
+          {
+            y: 0,
+            opacity: 1,
+            ease: 'power2.out',
+          },
+          '-=0.2',
+        );
+
+        // SPAN: bottom -> top
+        tl.to(
+          location,
           {
             y: 0,
             opacity: 1,
