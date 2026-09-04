@@ -40,9 +40,12 @@
     .countdown {
       .countdown-content {
         position: absolute;
-        top: 34%;
+        top: 34% !important;
         left: 50%;
       }
+    }
+    .countdown-content .timer p {
+      font-size: 20px;
     }
   }
 }
