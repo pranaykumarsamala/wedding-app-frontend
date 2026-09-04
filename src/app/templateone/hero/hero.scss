@@ -1,516 +1,516 @@
 .hero-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  .arch-of-wedding {
     position: relative;
     width: 100%;
-    overflow: hidden;
-    .arch-of-wedding {
-        position: relative;
-        width: 100%;
-        margin: 0 auto;
-        padding-top: 30px;
+    margin: 0 auto;
+    padding-top: 30px;
+  }
+  // ==========================================
+  // ARCH IMAGE
+  // ==========================================
+  .arch-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-bottom: 50px;
+  }
+  // ==========================================
+  // TOP HANGING FLOWERS
+  // ==========================================
+  .arch-flow {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    .flower {
+      position: absolute;
+      width: 25px;
+      height: 270px;
+      object-fit: fill;
+      transform-origin: 50% 0%;
     }
-    // ==========================================
-    // ARCH IMAGE
-    // ==========================================
-    .arch-image {
-        display: block;
-        width: 100%;
-        height: auto;
-        padding-bottom: 50px;
+    .flower-1 {
+      left: 17.5%;
+      top: 15.3%;
+      height: 270px;
     }
-    // ==========================================
-    // TOP HANGING FLOWERS
-    // ==========================================
-    .arch-flow {
-        position: absolute;
-        inset: 0;
-        z-index: 2;
-        pointer-events: none;
-        .flower {
-            position: absolute;
-            width: 30px;
-            height: 270px;
-            object-fit: fill;
-            transform-origin: 50% 0%;
-        }
-        .flower-1 {
-            left: 17.5%;
-            top: 15.3%;
-            height: 270px;
-        }
-        .flower-2 {
-            left: 22.6%;
-            top: 15.3%;
-            height: 200px;
-        }
-        .flower-3 {
-            left: 27.5%;
-            top: 15.3%;
-            height: 160px;
-        }
-        .flower-4 {
-            right: 27.5%;
-            top: 15.3%;
-            height: 160px;
-        }
-        .flower-5 {
-            right: 22.6%;
-            top: 15.3%;
-            height: 200px;
-        }
-        .flower-6 {
-            right: 17.5%;
-            top: 15.3%;
-            height: 270px;
-        }
+    .flower-2 {
+      left: 22.6%;
+      top: 15.3%;
+      height: 200px;
     }
-    // ==========================================
-    // BELLS
-    // ==========================================
-    .bells {
-        position: absolute;
-        inset: 0;
-        z-index: 3;
-        pointer-events: none;
-        .bell {
-            position: absolute;
-            width: 3%;
-            height: auto;
-            transform-origin: 50% 0%;
-        }
-        .bell-1 {
-            left: 31%;
-            top: 15.3%;
-        }
-        .bell-2 {
-            left: 37%;
-            top: 15.3%;
-        }
-        .bell-3 {
-            left: 43%;
-            top: 15.3%;
-        }
-        .bell-4 {
-            left: 49%;
-            top: 15.3%;
-        }
-        .bell-5 {
-            left: 55%;
-            top: 15.3%;
-        }
-        .bell-6 {
-            left: 61%;
-            top: 15.3%;
-        }
-        .bell-7 {
-            left: 67%;
-            top: 15.3%;
-        }
+    .flower-3 {
+      left: 27.5%;
+      top: 15.3%;
+      height: 160px;
     }
-    // ==========================================
-    // LEFT BOTTOM DECORATION
-    // ==========================================
-    .left-bottom-flower {
-        position: absolute;
-        left: 6%;
-        bottom: 0%;
-        width: 150px;
-        z-index: 4;
-        .banner-tree {
-            position: absolute;
-            left: 30%;
-            bottom: 79px;
-            width: 100%;
-            height: auto;
-        }
-        .flower-pot {
-            position: relative;
-            left: -31%;
-            top: -24px;
-            width: 138%;
-            height: auto;
-        }
+    .flower-4 {
+      right: 27.5%;
+      top: 15.3%;
+      height: 160px;
     }
-    // ==========================================
-    // RIGHT BOTTOM DECORATION
-    // ==========================================
-    .right-bottom-flower {
-        position: absolute;
-        right: 10%;
-        bottom: 59px;
-        width: 150px;
-        z-index: 4;
-        .banner-tree {
-            position: absolute;
-            right: -5%;
-            bottom: 0;
-            width: 100%;
-            height: auto;
-        }
-        .lamp {
-            position: absolute;
-            right: 9%;
-            top: -11%;
-            width: 77px;
-            height: auto;
-        }
-        .flower-pot {
-            position: relative;
-            right: -60%;
-            top: 27px;
-            width: 100%;
-            height: auto;
-        }
+    .flower-5 {
+      right: 22.6%;
+      top: 15.3%;
+      height: 200px;
     }
-    // ==========================================
-    // COUPLE NAMES
-    // ==========================================
-    .couple-names {
-        position: absolute;
-        top: 43%;
-        left: 50%;
-        z-index: 5;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        transform: translate(-50%, -50%);
-        color: #9c0000;
-        text-align: center;
-        white-space: nowrap;
-        pointer-events: none;
-        h1 {
-            margin: 0;
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(42px, 8.8vw, 90px);
-            font-weight: 900;
-            line-height: 0.85;
-            letter-spacing: -1px;
-        }
-        .name-1 {
-            transform: translateX(-35%);
-        }
-        .name-2 {
-            transform: translateX(35%);
-        }
-        span {
-            margin: 8px 0;
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(30px, 5.8vw, 60px);
-            font-weight: 400;
-            line-height: 1;
-        }
+    .flower-6 {
+      right: 17.5%;
+      top: 15.3%;
+      height: 270px;
     }
+  }
+  // ==========================================
+  // BELLS
+  // ==========================================
+  .bells {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    .bell {
+      position: absolute;
+      width: 3%;
+      height: auto;
+      transform-origin: 50% 0%;
+    }
+    .bell-1 {
+      left: 31%;
+      top: 15.3%;
+    }
+    .bell-2 {
+      left: 37%;
+      top: 15.3%;
+    }
+    .bell-3 {
+      left: 43%;
+      top: 15.3%;
+    }
+    .bell-4 {
+      left: 49%;
+      top: 15.3%;
+    }
+    .bell-5 {
+      left: 55%;
+      top: 15.3%;
+    }
+    .bell-6 {
+      left: 61%;
+      top: 15.3%;
+    }
+    .bell-7 {
+      left: 67%;
+      top: 15.3%;
+    }
+  }
+  // ==========================================
+  // LEFT BOTTOM DECORATION
+  // ==========================================
+  .left-bottom-flower {
+    position: absolute;
+    left: 6%;
+    bottom: 0%;
+    width: 150px;
+    z-index: 4;
+    .banner-tree {
+      position: absolute;
+      left: 30%;
+      bottom: 79px;
+      width: 100%;
+      height: auto;
+    }
+    .flower-pot {
+      position: relative;
+      left: -31%;
+      top: -24px;
+      width: 138%;
+      height: auto;
+    }
+  }
+  // ==========================================
+  // RIGHT BOTTOM DECORATION
+  // ==========================================
+  .right-bottom-flower {
+    position: absolute;
+    right: 10%;
+    bottom: 59px;
+    width: 150px;
+    z-index: 4;
+    .banner-tree {
+      position: absolute;
+      right: -5%;
+      bottom: 0;
+      width: 100%;
+      height: auto;
+    }
+    .lamp {
+      position: absolute;
+      right: 9%;
+      top: -11%;
+      width: 77px;
+      height: auto;
+    }
+    .flower-pot {
+      position: relative;
+      right: -60%;
+      top: 27px;
+      width: 100%;
+      height: auto;
+    }
+  }
+  // ==========================================
+  // COUPLE NAMES
+  // ==========================================
+  .couple-names {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    color: #9c0000;
+    text-align: center;
+    white-space: nowrap;
+    pointer-events: none;
+    h1 {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(42px, 8.8vw, 90px);
+      font-weight: 900;
+      line-height: 0.85;
+      letter-spacing: -1px;
+    }
+    .name-1 {
+      transform: translateX(-35%);
+    }
+    .name-2 {
+      transform: translateX(35%);
+    }
+    span {
+      margin: 8px 0;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 5.8vw, 60px);
+      font-weight: 400;
+      line-height: 1;
+    }
+  }
 }
 
 // ==================================================
 // TABLET
 // ==================================================
 @media (max-width: 768px) {
-    .hero-section {
-        .arch-of-wedding {
-            padding-top: 15px;
-        }
-        // TOP FLOWERS
-        .arch-flow {
-            .flower {
-                width: 14px;
-            }
-            .flower-1 {
-                height: 140px;
-            }
-            .flower-2 {
-                height: 105px;
-            }
-            .flower-3 {
-                height: 90px;
-            }
-            .flower-4 {
-                height: 90px;
-            }
-            .flower-5 {
-                height: 105px;
-            }
-            .flower-6 {
-                height: 140px;
-            }
-        }
-        // BELLS
-        .bells {
-            .bell {
-                width: 3%;
-            }
-        }
-        // LEFT DECORATION
-        .left-bottom-flower {
-            left: 2%;
-            bottom: 2%;
-            width: 25%;
-            .banner-tree {
-                width: 100%;
-            }
-            .flower-pot {
-                left: -20%;
-                top: 45px;
-                width: 90%;
-            }
-        }
-        // RIGHT DECORATION
-        .right-bottom-flower {
-            right: 2%;
-            bottom: 5%;
-            width: 25%;
-            .banner-tree {
-                width: 100%;
-            }
-            .flower-pot {
-                right: -20%;
-                top: 60px;
-                width: 90%;
-            }
-            .lamp {
-                right: 10%;
-                top: 45%;
-                width: 35%;
-            }
-        }
-        // NAMES
-        .couple-names {
-            top: 42%;
-            h1 {
-                font-size: clamp(20px, 6vw, 55px);
-            }
-            .name-1 {
-                transform: translateX(-18%);
-            }
-            .name-2 {
-                transform: translateX(18%);
-            }
-            span {
-                margin: 5px 0;
-                font-size: clamp(18px, 5vw, 40px);
-            }
-        }
+  .hero-section {
+    .arch-of-wedding {
+      padding-top: 15px;
     }
+    // TOP FLOWERS
+    .arch-flow {
+      .flower {
+        width: 14px;
+      }
+      .flower-1 {
+        height: 140px;
+      }
+      .flower-2 {
+        height: 105px;
+      }
+      .flower-3 {
+        height: 90px;
+      }
+      .flower-4 {
+        height: 90px;
+      }
+      .flower-5 {
+        height: 105px;
+      }
+      .flower-6 {
+        height: 140px;
+      }
+    }
+    // BELLS
+    .bells {
+      .bell {
+        width: 3%;
+      }
+    }
+    // LEFT DECORATION
+    .left-bottom-flower {
+      left: 2%;
+      bottom: 2%;
+      width: 25%;
+      .banner-tree {
+        width: 100%;
+      }
+      .flower-pot {
+        left: -20%;
+        top: 45px;
+        width: 90%;
+      }
+    }
+    // RIGHT DECORATION
+    .right-bottom-flower {
+      right: 2%;
+      bottom: 5%;
+      width: 25%;
+      .banner-tree {
+        width: 100%;
+      }
+      .flower-pot {
+        right: -20%;
+        top: 60px;
+        width: 90%;
+      }
+      .lamp {
+        right: 10%;
+        top: 45%;
+        width: 35%;
+      }
+    }
+    // NAMES
+    .couple-names {
+      top: 42%;
+      h1 {
+        font-size: clamp(20px, 6vw, 55px);
+      }
+      .name-1 {
+        transform: translateX(-18%);
+      }
+      .name-2 {
+        transform: translateX(18%);
+      }
+      span {
+        margin: 5px 0;
+        font-size: clamp(18px, 5vw, 40px);
+      }
+    }
+  }
 }
 
 // ==================================================
 // MOBILE
 // ==================================================
 @media (max-width: 480px) {
-    .hero-section {
-        width: 100%;
-        overflow: hidden;
-        .arch-of-wedding {
-            width: 100%;
-            padding-top: 5px;
-        }
-        // ==========================================
-        // ARCH IMAGE
-        // ==========================================
-        .arch-image {
-            display: block;
-            width: 100%;
-            height: auto;
-            padding-bottom: 2px;
-        }
-        // ==========================================
-        // TOP FLOWERS
-        // ==========================================
-        .arch-flow {
-            .flower {
-                width: 3.5vw;
-                max-width: 15px;
-                height: auto;
-            }
-            .flower-1 {
-                left: 17.5%;
-                top: 15.3%;
-                height: 115px;
-            }
-            .flower-2 {
-                left: 22.6%;
-                top: 15.3%;
-                height: 88px;
-            }
-            .flower-3 {
-                left: 27.5%;
-                top: 15.3%;
-                height: 70px;
-            }
-            .flower-4 {
-                right: 27.5%;
-                top: 15.3%;
-                height: 70px;
-            }
-            .flower-5 {
-                right: 22.6%;
-                top: 15.3%;
-                height: 88px;
-            }
-            .flower-6 {
-                right: 17.5%;
-                top: 15.3%;
-                height: 115px;
-            }
-        }
-        // ==========================================
-        // BELLS
-        // ==========================================
-        .bells {
-            .bell {
-                width: 3%;
-                height: auto;
-            }
-            .bell-1 {
-                left: 31%;
-                top: 15.3%;
-            }
-            .bell-2 {
-                left: 37%;
-                top: 15.3%;
-            }
-            .bell-3 {
-                left: 43%;
-                top: 15.3%;
-            }
-            .bell-4 {
-                left: 49%;
-                top: 15.3%;
-            }
-            .bell-5 {
-                left: 55%;
-                top: 15.3%;
-            }
-            .bell-6 {
-                left: 61%;
-                top: 15.3%;
-            }
-            .bell-7 {
-                left: 67%;
-                top: 15.3%;
-            }
-        }
-        // ==========================================
-        // LEFT BOTTOM DECORATION
-        // ==========================================
-        .left-bottom-flower {
-            left: 1%;
-            bottom: 4%;
-            width: 25%;
-            height: auto;
-            .banner-tree {
-                position: absolute;
-                left: 12px;
-                bottom: -8px;
-                top: auto;
-                width: 100%;
-                height: auto;
-            }
-            .flower-pot {
-                position: relative;
-                left: -15%;
-                top: 23px;
-                width: 80%;
-                height: auto;
-            }
-        }
-        // ==========================================
-        // RIGHT BOTTOM DECORATION
-        // ==========================================
-        .right-bottom-flower {
-            right: 1%;
-            bottom: 2%;
-            width: 25%;
-            height: auto;
-            .banner-tree {
-                position: absolute;
-                right: 15%;
-                bottom: -5px;
-                top: auto;
-                width: 100%;
-                height: auto;
-            }
-            .lamp {
-                position: absolute;
-                right: 63%;
-                top: 7%;
-                width: 29%;
-                height: auto;
-            }
-            .flower-pot {
-                position: relative;
-                right: -24%;
-                top: 5px;
-                width: 80%;
-                height: auto;
-            }
-        }
-        // ==========================================
-        // COUPLE NAMES
-        // ==========================================
-        .couple-names {
-            position: absolute;
-            top: 40%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 10;
-            width: 100%;
-            white-space: nowrap;
-            text-align: center;
-            h1 {
-                margin: 0;
-                font-family: 'Playfair Display', serif;
-                font-size: 17px;
-                font-weight: 900;
-                line-height: 0.9;
-                letter-spacing: -0.5px;
-            }
-            .name-1 {
-                transform: translateX(-12%);
-            }
-            .name-2 {
-                transform: translateX(12%);
-            }
-            span {
-                margin: 4px 0;
-                font-family: 'Playfair Display', serif;
-                font-size: 20px;
-                font-weight: 400;
-                line-height: 1;
-            }
-        }
+  .hero-section {
+    width: 100%;
+    overflow: hidden;
+    .arch-of-wedding {
+      width: 100%;
+      padding-top: 5px;
     }
+    // ==========================================
+    // ARCH IMAGE
+    // ==========================================
+    .arch-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      padding-bottom: 2px;
+    }
+    // ==========================================
+    // TOP FLOWERS
+    // ==========================================
+    .arch-flow {
+      .flower {
+        width: 3.5vw;
+        max-width: 15px;
+        height: auto;
+      }
+      .flower-1 {
+        left: 17.5%;
+        top: 15.3%;
+        height: 115px;
+      }
+      .flower-2 {
+        left: 22.6%;
+        top: 15.3%;
+        height: 88px;
+      }
+      .flower-3 {
+        left: 27.5%;
+        top: 15.3%;
+        height: 70px;
+      }
+      .flower-4 {
+        right: 27.5%;
+        top: 15.3%;
+        height: 70px;
+      }
+      .flower-5 {
+        right: 22.6%;
+        top: 15.3%;
+        height: 88px;
+      }
+      .flower-6 {
+        right: 17.5%;
+        top: 15.3%;
+        height: 115px;
+      }
+    }
+    // ==========================================
+    // BELLS
+    // ==========================================
+    .bells {
+      .bell {
+        width: 3%;
+        height: auto;
+      }
+      .bell-1 {
+        left: 31%;
+        top: 15.3%;
+      }
+      .bell-2 {
+        left: 37%;
+        top: 15.3%;
+      }
+      .bell-3 {
+        left: 43%;
+        top: 15.3%;
+      }
+      .bell-4 {
+        left: 49%;
+        top: 15.3%;
+      }
+      .bell-5 {
+        left: 55%;
+        top: 15.3%;
+      }
+      .bell-6 {
+        left: 61%;
+        top: 15.3%;
+      }
+      .bell-7 {
+        left: 67%;
+        top: 15.3%;
+      }
+    }
+    // ==========================================
+    // LEFT BOTTOM DECORATION
+    // ==========================================
+    .left-bottom-flower {
+      left: 1%;
+      bottom: 4%;
+      width: 25%;
+      height: auto;
+      .banner-tree {
+        position: absolute;
+        left: 12px;
+        bottom: -8px;
+        top: auto;
+        width: 100%;
+        height: auto;
+      }
+      .flower-pot {
+        position: relative;
+        left: -15%;
+        top: 23px;
+        width: 80%;
+        height: auto;
+      }
+    }
+    // ==========================================
+    // RIGHT BOTTOM DECORATION
+    // ==========================================
+    .right-bottom-flower {
+      right: 1%;
+      bottom: 2%;
+      width: 25%;
+      height: auto;
+      .banner-tree {
+        position: absolute;
+        right: 15%;
+        bottom: -5px;
+        top: auto;
+        width: 100%;
+        height: auto;
+      }
+      .lamp {
+        position: absolute;
+        right: 63%;
+        top: 7%;
+        width: 29%;
+        height: auto;
+      }
+      .flower-pot {
+        position: relative;
+        right: -24%;
+        top: 5px;
+        width: 80%;
+        height: auto;
+      }
+    }
+    // ==========================================
+    // COUPLE NAMES
+    // ==========================================
+    .couple-names {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      width: 100%;
+      white-space: nowrap;
+      text-align: center;
+      h1 {
+        margin: 0;
+        font-family: 'Playfair Display', serif;
+        font-size: 17px;
+        font-weight: 900;
+        line-height: 0.9;
+        letter-spacing: -0.5px;
+      }
+      .name-1 {
+        transform: translateX(-12%);
+      }
+      .name-2 {
+        transform: translateX(12%);
+      }
+      span {
+        margin: 4px 0;
+        font-family: 'Playfair Display', serif;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1;
+      }
+    }
+  }
 }
 
 // ==================================================
 // SMALL MOBILE
 // ==================================================
 @media (max-width: 360px) {
-    .hero-section {
-        .arch-flow {
-            .flower-1,
-            .flower-6 {
-                height: 95px;
-            }
-            .flower-2,
-            .flower-5 {
-                height: 72px;
-            }
-            .flower-3,
-            .flower-4 {
-                height: 58px;
-            }
-        }
-        .couple-names {
-            h1 {
-                font-size: 8vw;
-            }
-            span {
-                font-size: 5vw;
-            }
-        }
-        .left-bottom-flower,
-        .right-bottom-flower {
-            width: 22%;
-        }
+  .hero-section {
+    .arch-flow {
+      .flower-1,
+      .flower-6 {
+        height: 95px;
+      }
+      .flower-2,
+      .flower-5 {
+        height: 72px;
+      }
+      .flower-3,
+      .flower-4 {
+        height: 58px;
+      }
     }
+    .couple-names {
+      h1 {
+        font-size: 8vw;
+      }
+      span {
+        font-size: 5vw;
+      }
+    }
+    .left-bottom-flower,
+    .right-bottom-flower {
+      width: 22%;
+    }
+  }
 }

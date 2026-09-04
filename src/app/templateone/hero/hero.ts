@@ -64,14 +64,13 @@ export class Hero implements AfterViewInit, OnDestroy {
 
     bells.forEach((bell, index) => {
       gsap.to(bell, {
-        rotation: 4,
-        y: 3,
+        rotation: 8,
+        y: 5,
 
-        duration: 1.2,
-        delay: index * 0.08,
+        duration: 1.4,
+        delay: index * 0.12,
 
         ease: 'sine.inOut',
-
         repeat: -1,
         yoyo: true,
 
