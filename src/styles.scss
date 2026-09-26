@@ -1,4 +1,8 @@
-body app-wedding-invite{
+body {
+  overflow-x: hidden;
+}
+
+body app-wedding-invite {
   font-family: 'Playfair Display', serif;
   width: 100%;
   margin: 0;
@@ -17,7 +21,7 @@ body app-wedding-invite{
 /* Mobile Background */
 
 @media (max-width: 480px) {
-  body app-wedding-invite{
+  body app-wedding-invite {
     background-image: url('/assets/template-one/one/total-bg-final -mobile-2.png');
     background-position: top center;
     background-repeat: no-repeat;
