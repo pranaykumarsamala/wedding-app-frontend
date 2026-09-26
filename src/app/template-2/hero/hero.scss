@@ -18,15 +18,41 @@
 
 .hero {
     position: relative;
-    // min-height: 100svh;
     width: 100%;
     aspect-ratio: 971 / 867;
     overflow: hidden;
-    background-image:
-        url('/assets/template-2/hero-bg.png');
+    background-image: url('/assets/template-2/hero-bg.png');
     background-size: cover;
     background-position: center;
     isolation: isolate;
+    color: #fffaf0;
+}
+
+.hero::before {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(180deg, rgba(22, 17, 34, 0.18) 0%, transparent 34%, rgba(30, 20, 37, 0.12) 100%),
+        radial-gradient(ellipse at 50% 38%, transparent 25%, rgba(27, 20, 37, 0.2) 100%);
+    content: '';
+    pointer-events: none;
+}
+
+.hero-frame {
+    position: absolute;
+    z-index: 30;
+    inset: clamp(12px, 2.2vw, 32px);
+    border: 1px solid rgba(255, 225, 166, 0.52);
+    box-shadow: inset 0 0 0 5px rgba(255, 244, 218, 0.08);
+    pointer-events: none;
+}
+
+.hero-frame::after {
+    position: absolute;
+    inset: 7px;
+    border: 1px solid rgba(255, 225, 166, 0.2);
+    content: '';
 }
 
 .toran {
@@ -36,14 +62,14 @@
     width: 100%;
     height: auto;
     z-index: 5;
-    // pointer-events: none;
+    pointer-events: none;
 }
 
 .hanging-flowers {
     position: absolute;
     inset: 0;
     z-index: 4;
-    // pointer-events: none;
+    pointer-events: none;
 }
 
 .hanging {
@@ -125,10 +151,12 @@
 
 .ganesh {
     position: absolute;
-    top: 10%;
+    top: 9%;
     left: 50%;
     transform: translateX(-50%);
-    width: 8%;
+    z-index: 10;
+    width: 7%;
+    filter: drop-shadow(0 4px 12px rgba(54, 25, 27, 0.24));
 }
 
 .wedding-stars {
@@ -147,32 +175,58 @@
     width: 90%;
     transform: translateX(-50%);
     text-align: center;
-    color: #ffffff;
     z-index: 20;
-    // pointer-events: none;
+    pointer-events: none;
+}
+
+.eyebrow {
+    margin: 0 0 clamp(12px, 1.4vw, 22px);
+    color: #f5dcae;
+    font-family: 'kurale', serif;
+    font-size: clamp(10px, 1.05vw, 15px);
+    letter-spacing: 0.24em;
+    line-height: 1.4;
+    text-transform: uppercase;
+    text-shadow: 0 2px 12px rgba(38, 21, 28, 0.48);
 }
 
 .names h1 {
     margin: 0;
     font-family: 'cardillac', cursive;
-    font-size: clamp(48px,
-            7vw,
-            108px);
+    font-size: clamp(48px, 7vw, 108px);
     font-weight: 500;
     line-height: 0.95;
     text-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.05);
+        0 2px 4px rgba(0, 0, 0, 0.1),
+        0 8px 28px rgba(33, 19, 31, 0.3);
 }
 
 
 .names span {
-    display: block;
-    margin: 12px 0;
-    font-family: 'cardillac', cursive;
-    font-size: clamp(28px,
-            4vw,
-            54px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(12px, 1.5vw, 24px);
+    margin: clamp(12px, 1.5vw, 22px) 0;
+    color: #f4d7a0;
+    font-family: 'kurale', serif;
+    font-size: clamp(11px, 1.2vw, 17px);
+    letter-spacing: 0.34em;
     line-height: 1;
+    text-transform: uppercase;
+    text-shadow: 0 2px 12px rgba(38, 21, 28, 0.5);
+}
+
+.names span::before,
+.names span::after {
+    width: clamp(26px, 4vw, 56px);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(244, 215, 160, 0.9));
+    content: '';
+}
+
+.names span::after {
+    transform: scaleX(-1);
 }
 
 .taj {
@@ -180,7 +234,9 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 11;
     width: 95%;
+    pointer-events: none;
 }
 
 .couple {
@@ -188,46 +244,63 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 12;
     width: 19%;
+    pointer-events: none;
 }
 
 
 @media (max-width: 600px) {
 
     .hero {
-        /*
-     * Make the mobile composition taller
-     * instead of using 100svh.
-     */
         aspect-ratio: 0.72;
     }
 
-    .thoran {
+    .toran {
         width: 120%;
         max-width: none;
         left: 50%;
         transform: translateX(-50%);
     }
 
+    .hero-frame {
+        inset: 10px;
+    }
+
+    .hero-frame::after {
+        inset: 5px;
+    }
+
     .ganesh {
-        top: 10%;
-        width: 13%;
+        top: 8%;
+        width: 12%;
     }
 
     .names {
-        top: 25%;
+        top: 23%;
         width: 90%;
     }
 
     .names h1 {
-        font-size: clamp(42px,
-                14vw,
-                65px);
+        font-size: clamp(42px, 14vw, 65px);
+    }
+
+    .eyebrow {
+        margin-bottom: 12px;
+        font-size: clamp(9px, 2.5vw, 11px);
+        letter-spacing: 0.17em;
     }
 
     .names span {
-        margin: 8px 0;
-        font-size: clamp(25px, 8vw, 38px);
+        gap: 10px;
+        margin: 12px 0;
+        font-size: 10px;
+        letter-spacing: 0.28em;
+    }
+
+    .names span::before,
+    .names span::after {
+        width: 22px;
     }
 
     .moon {
@@ -236,7 +309,7 @@
         width: 8%;
     }
 
-    .taj-mahal {
+    .taj {
         width: 105%;
     }
 
@@ -259,8 +332,6 @@
     }
 
     .hanging-left-3 {
-        // left: 50px;
-        // top: -80px;
         display: none;
     }
 
@@ -291,8 +362,6 @@
     }
 
     .hanging-right-3 {
-        // right: 50px;
-        // top: -80px;
         display: none;
     }
 

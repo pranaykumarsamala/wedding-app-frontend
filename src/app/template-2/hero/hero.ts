@@ -1,11 +1,10 @@
-import { Component, ElementRef, ViewChild, OnDestroy } from '@angular/core';
+import { Component, ElementRef, ViewChild, OnDestroy, OnInit } from '@angular/core';
 import { ISourceOptions } from '@tsparticles/engine';
 import { loadSlim } from '@tsparticles/slim';
 import { tsParticles } from '@tsparticles/engine';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-hero',
@@ -13,25 +12,26 @@ gsap.registerPlugin(ScrollTrigger);
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
 })
-export class Hero {
+export class Hero implements OnInit, OnDestroy {
   @ViewChild('hero', { static: true }) hero!: ElementRef<HTMLElement>;
 
   private ctx?: gsap.Context;
 
+  ngOnInit(): void {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
   async ngAfterViewInit() {
+    this.ctx = gsap.context(() => {
+      this.createHeroAnimation();
+    }, this.hero.nativeElement);
 
     await loadSlim(tsParticles);
 
     await tsParticles.load({
       id: 'wedding-stars',
-
       options: this.getStarOptions()
     });
-
-    this.ctx = gsap.context(() => {
-      this.createHeroAnimation();
-    }, this.hero.nativeElement);
-
   }
 
   private getStarOptions(): ISourceOptions {
@@ -112,9 +112,7 @@ export class Hero {
     //   '.hero-background'
     // );
 
-    const thoran = hero.querySelector(
-      '.thoran'
-    );
+    const thoran = hero.querySelector('.toran');
 
     const ganesh = hero.querySelector(
       '.ganesh'
@@ -124,8 +122,12 @@ export class Hero {
       '.names'
     );
 
+    const eyebrow = hero.querySelector(
+      '.eyebrow'
+    );
+
     const groom = hero.querySelector(
-      '.names h1:first-child'
+      '.names h1:first-of-type'
     );
 
     const weds = hero.querySelector(
@@ -133,23 +135,18 @@ export class Hero {
     );
 
     const bride = hero.querySelector(
-      '.names h1:last-child'
+      '.names h1:last-of-type'
     );
 
     // const moon = hero.querySelector(
     //   '.moon'
     // );
 
-    const taj = hero.querySelector(
-      '.taj-mahal'
-    );
+    const taj = hero.querySelector('.taj');
 
-    const couple = hero.querySelector(
-      '.couple'
-    );
+    const couple = hero.querySelector('.couple');
 
-    const hangingFlowers =
-      hero.querySelectorAll('.hanging');
+    const hangingFlowers = hero.querySelectorAll('.hanging');
     /* -----------------------------
        Initial states
     ----------------------------- */
@@ -165,15 +162,15 @@ export class Hero {
       scale: 0.9
     });
 
+    gsap.set(eyebrow, {
+      y: 16,
+      opacity: 0
+    });
+
     gsap.set([groom, weds, bride], {
       y: 40,
       opacity: 0
     });
-
-    // gsap.set(moon, {
-    //   x: 20,
-    //   opacity: 0
-    // });
 
     gsap.set(taj, {
       y: 50,
@@ -185,6 +182,11 @@ export class Hero {
       opacity: 0,
       scale: 0.95
     });
+
+    // gsap.set(moon, {
+    //   x: 20,
+    //   opacity: 0
+    // });
 
     gsap.to(hangingFlowers, {
       rotation: 3,
@@ -199,7 +201,7 @@ export class Hero {
     });
 
     gsap.to(thoran, {
-      y: 3,
+      yPercent: 3,
       duration: 3,
       ease: 'sine.inOut',
       repeat: -1,
@@ -230,6 +232,12 @@ export class Hero {
         duration: 0.9
       }, '-=0.7')
 
+      .to(eyebrow, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6
+      }, '-=0.3')
+
       .to(groom, {
         opacity: 1,
         y: 0,
@@ -246,27 +254,7 @@ export class Hero {
         opacity: 1,
         y: 0,
         duration: 0.8
-      }, '-=0.3')
-
-      // .to(moon, {
-      //   x: 0,
-      //   opacity: 1,
-      //   duration: 0.8
-      // }, '-=0.6')
-
-      .to(taj, {
-        y: 0,
-        opacity: 1,
-        duration: 1
-      }, '-=0.5')
-
-      .to(couple, {
-        y: 0,
-        opacity: 1,
-        scale: 1,
-        duration: 1
-      }, '-=0.7');
-
+      }, '-=0.3');
 
     /* -----------------------------
        Scroll animation
@@ -307,16 +295,15 @@ export class Hero {
       scrollTrigger: {
         trigger: hero,
         start: 'top top',
-        end: 'bottom top',
+        end: '+=100%',
         scrub: 1,
+        pin: true,
         invalidateOnRefresh: true
       }
     });
 
 
     timeline
-
-
       /* Thoran */
       .to(thoran, {
         yPercent: -12,
@@ -338,18 +325,21 @@ export class Hero {
         ease: 'none'
       }, 0)
 
-      /* Taj Mahal */
+      /* Reveal the landscape as the invitation is explored */
       .to(taj, {
+        y: 0,
         yPercent: -10,
+        opacity: 1,
         ease: 'none'
-      }, 0)
+      }, 0.22)
 
-
-      /* Couple */
       .to(couple, {
+        y: 0,
         yPercent: -5,
+        opacity: 1,
+        scale: 1,
         ease: 'none'
-      }, 0);
+      }, 0.48)
 
   }
 
