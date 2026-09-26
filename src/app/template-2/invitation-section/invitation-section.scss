@@ -8,6 +8,7 @@
 }
 
 .invitation-background {
+    display: block;
     width: 100%;
     height: auto;
     overflow: hidden;
@@ -20,6 +21,7 @@
     right: 20%;
     z-index: 3;
     pointer-events: none;
+    filter: drop-shadow(0 12px 18px rgba(52, 25, 38, 0.16));
 }
 
 /* --------------------------------
@@ -36,6 +38,7 @@
 }
 
 .invitation-title {
+    perspective: 800px;
     margin: 0 0 25px;
     font-family: 'cardillac', serif;
     font-size: clamp(55px, 7vw, 90px);
@@ -61,6 +64,7 @@
 }
 
 .save-date {
+    perspective: 800px;
     margin-top: 32px;
     font-family: 'kurale', serif;
     font-size: clamp(28px, 3vw, 40px);

@@ -33,10 +33,25 @@ export class InvitationSection implements OnInit, OnDestroy {
   private createInvitationAnimation(): void {
 
     const section = this.invitationSection.nativeElement;
+    const refreshAfterLayout = (): void => {
+      requestAnimationFrame(() => ScrollTrigger.refresh());
+    };
+
+    section.querySelectorAll('img').forEach((image) => {
+      if (!image.complete) {
+        image.addEventListener('load', refreshAfterLayout, { once: true });
+        image.addEventListener('error', refreshAfterLayout, { once: true });
+      }
+    });
 
     const background =
       section.querySelector<HTMLElement>(
         '.invitation-background'
+      );
+
+    const content =
+      section.querySelector<HTMLElement>(
+        '.invitation-content'
       );
 
     const peacock =
@@ -77,6 +92,7 @@ export class InvitationSection implements OnInit, OnDestroy {
 
     if (
       !background ||
+      !content ||
       !peacock ||
       !title ||
       !familyName ||
@@ -161,7 +177,9 @@ export class InvitationSection implements OnInit, OnDestroy {
       ],
       {
         autoAlpha: 0,
-        y: 70
+        y: 50,
+        rotationX: -45,
+        transformPerspective: 800
       }
     );
 
@@ -199,15 +217,31 @@ export class InvitationSection implements OnInit, OnDestroy {
     // Nothing starts until section reaches viewport.
     // =====================================================
 
+    const peacockFloat = gsap.to(peacock, {
+      y: -8,
+      x: 3,
+      rotation: 0.8,
+      transformOrigin: 'center bottom',
+      duration: 5.2,
+      ease: 'sine.inOut',
+      repeat: -1,
+      yoyo: true,
+      paused: true
+    });
+
     const intro = gsap.timeline({
 
       scrollTrigger: {
 
         trigger: section,
 
-        start: 'top 70%',
+        start: 'top 78%',
 
-        once: true,
+        toggleActions: 'play reverse play reverse',
+
+        onLeave: () => peacockFloat.pause(0),
+
+        onLeaveBack: () => peacockFloat.pause(0),
 
         invalidateOnRefresh: true
 
@@ -249,6 +283,8 @@ export class InvitationSection implements OnInit, OnDestroy {
         autoAlpha: 1,
 
         y: 0,
+
+        rotationX: 0,
 
         duration: 0.8,
 
@@ -322,6 +358,8 @@ export class InvitationSection implements OnInit, OnDestroy {
 
         y: 0,
 
+        rotationX: 0,
+
         duration: 0.7,
 
         ease: 'power3.out',
@@ -385,23 +423,8 @@ export class InvitationSection implements OnInit, OnDestroy {
     // PEACOCK SUBTLE FLOAT
     // =====================================================
 
-    gsap.to(peacock, {
-
-      y: -4,
-
-      rotation: 0.35,
-
-      transformOrigin: 'center bottom',
-
-      duration: 3.8,
-
-      ease: 'sine.inOut',
-
-      repeat: -1,
-
-      yoyo: true
-
-    });
+    intro.eventCallback('onComplete', () => peacockFloat.play());
+    intro.eventCallback('onReverseComplete', () => peacockFloat.pause(0));
 
 
     // =====================================================
@@ -432,9 +455,9 @@ export class InvitationSection implements OnInit, OnDestroy {
       background,
       {
 
-        yPercent: 2,
+        yPercent: 3,
 
-        scale: 1.01,
+        scale: 1.02,
 
         ease: 'none'
 
@@ -442,15 +465,29 @@ export class InvitationSection implements OnInit, OnDestroy {
       0
     );
 
+    parallax.to(
+      content,
+      {
+
+        yPercent: -14,
+
+        ease: 'none'
+
+      },
+      0
+    );
+
+    refreshAfterLayout();
+
 
     // Peacock — stronger movement
     parallax.to(
       peacock,
       {
 
-        yPercent: -10,
+        yPercent: -20,
 
-        xPercent: -2,
+        xPercent: -3,
 
         ease: 'none'
 
