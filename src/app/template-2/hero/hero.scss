@@ -1,0 +1,314 @@
+@font-face {
+    font-family: 'cardillac';
+    src: url('/assets/template-2/fonts/Florilane Cardillac.ttf') format('truetype');
+
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'kurale';
+    src: url('/assets/template-2/fonts/Kurale-Regular.ttf') format('truetype');
+
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+.hero {
+    position: relative;
+    // min-height: 100svh;
+    width: 100%;
+    aspect-ratio: 971 / 867;
+    overflow: hidden;
+    background-image:
+        url('/assets/template-2/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    isolation: isolate;
+}
+
+.toran {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 5;
+    // pointer-events: none;
+}
+
+.hanging-flowers {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    // pointer-events: none;
+}
+
+.hanging {
+    position: absolute;
+    width: 25px;
+    height: auto;
+}
+
+
+/* Left */
+
+.hanging-left-1 {
+    top: 40px;
+    left: 3%;
+}
+
+.hanging-left-2 {
+    top: -10px;
+    left: 6%;
+}
+
+.hanging-left-3 {
+    top: -100px;
+    left: 9%;
+}
+
+.hanging-left-4 {
+    width: auto;
+    top: -22px;
+    left: 11.5%;
+}
+
+.hanging-left-5 {
+    top: -180px;
+    left: 17.5%;
+}
+
+.hanging-left-6 {
+    top: -250px;
+    left: 21%;
+}
+
+
+/* Right */
+
+
+.hanging-right-1 {
+    top: 40px;
+    right: 3%;
+}
+
+.hanging-right-2 {
+    top: -10px;
+    right: 6%;
+}
+
+.hanging-right-3 {
+    top: -100px;
+    right: 9%;
+}
+
+.hanging-right-4 {
+    width: auto;
+    top: -22px;
+    right: 11.5%;
+}
+
+.hanging-right-5 {
+    top: -180px;
+    right: 17.5%;
+}
+
+.hanging-right-6 {
+    top: -250px;
+    right: 21%;
+}
+
+
+
+.ganesh {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8%;
+}
+
+.wedding-stars {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 60%;
+    z-index: 8;
+    pointer-events: none;
+}
+
+.names {
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    width: 90%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #ffffff;
+    z-index: 20;
+    // pointer-events: none;
+}
+
+.names h1 {
+    margin: 0;
+    font-family: 'cardillac', cursive;
+    font-size: clamp(48px,
+            7vw,
+            108px);
+    font-weight: 500;
+    line-height: 0.95;
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+
+.names span {
+    display: block;
+    margin: 12px 0;
+    font-family: 'cardillac', cursive;
+    font-size: clamp(28px,
+            4vw,
+            54px);
+    line-height: 1;
+}
+
+.taj {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+}
+
+.couple {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 19%;
+}
+
+
+@media (max-width: 600px) {
+
+    .hero {
+        /*
+     * Make the mobile composition taller
+     * instead of using 100svh.
+     */
+        aspect-ratio: 0.72;
+    }
+
+    .thoran {
+        width: 120%;
+        max-width: none;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .ganesh {
+        top: 10%;
+        width: 13%;
+    }
+
+    .names {
+        top: 25%;
+        width: 90%;
+    }
+
+    .names h1 {
+        font-size: clamp(42px,
+                14vw,
+                65px);
+    }
+
+    .names span {
+        margin: 8px 0;
+        font-size: clamp(25px, 8vw, 38px);
+    }
+
+    .moon {
+        top: 38%;
+        right: 8%;
+        width: 8%;
+    }
+
+    .taj-mahal {
+        width: 105%;
+    }
+
+    .couple {
+        width: 34%;
+    }
+
+    .hanging {
+        width: 14px;
+    }
+
+    .hanging-left-1 {
+        left: 10px;
+        top: 0px;
+    }
+
+    .hanging-left-2 {
+        left: 30px;
+        top: -50px;
+    }
+
+    .hanging-left-3 {
+        // left: 50px;
+        // top: -80px;
+        display: none;
+    }
+
+    .hanging-left-4 {
+        width: 30px;
+        left: 50px;
+        top: 0px;
+    }
+
+    .hanging-left-5 {
+        left: 80px;
+        top: -110px;
+    }
+
+    .hanging-left-6 {
+        left: 100px;
+        top: -140px;
+    }
+
+    .hanging-right-1 {
+        right: 10px;
+        top: 0px;
+    }
+
+    .hanging-right-2 {
+        right: 30px;
+        top: -50px;
+    }
+
+    .hanging-right-3 {
+        // right: 50px;
+        // top: -80px;
+        display: none;
+    }
+
+    .hanging-right-4 {
+        width: 30px;
+        right: 50px;
+        top: 0px;
+    }
+
+    .hanging-right-5 {
+        right: 80px;
+        top: -110px;
+    }
+
+    .hanging-right-6 {
+        right: 100px;
+        top: -140px;
+    }
+}
