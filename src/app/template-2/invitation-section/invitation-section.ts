@@ -229,25 +229,7 @@ export class InvitationSection implements OnInit, OnDestroy {
       paused: true
     });
 
-    const intro = gsap.timeline({
-
-      scrollTrigger: {
-
-        trigger: section,
-
-        start: 'top 78%',
-
-        toggleActions: 'play reverse play reverse',
-
-        onLeave: () => peacockFloat.pause(0),
-
-        onLeaveBack: () => peacockFloat.pause(0),
-
-        invalidateOnRefresh: true
-
-      }
-
-    });
+    const intro = gsap.timeline({ paused: true });
 
 
     // =====================================================
@@ -424,7 +406,16 @@ export class InvitationSection implements OnInit, OnDestroy {
     // =====================================================
 
     intro.eventCallback('onComplete', () => peacockFloat.play());
-    intro.eventCallback('onReverseComplete', () => peacockFloat.pause(0));
+
+    ScrollTrigger.create({
+      trigger: section,
+      start: 'top 78%',
+      onEnter: () => intro.restart(),
+      onEnterBack: () => intro.restart(),
+      onLeave: () => peacockFloat.pause(0),
+      onLeaveBack: () => peacockFloat.pause(0),
+      invalidateOnRefresh: true
+    });
 
 
     // =====================================================
