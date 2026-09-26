@@ -1,4 +1,3 @@
-
 .invitation-section {
     position: relative;
     width: 100%;
@@ -84,4 +83,18 @@
     font-size: clamp(19px, 2.3vw, 29px);
     line-height: 1.4;
     color: #69410e;
+}
+
+@media (max-width: 768px) {
+    .invitation-content {
+        top: 35%;
+    }
+
+    .invitation-background {
+        height: 100%;
+    }
+
+    .save-date, .wedding-date, .venue {
+        margin-top: 0;
+    }
 }
