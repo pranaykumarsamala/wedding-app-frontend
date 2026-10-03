@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Hero } from './hero/hero';
 import { InvitationSection } from './invitation-section/invitation-section';
+import { EventsSection } from './events-section/events-section';
 
 @Component({
   selector: 'app-template-2',
-  imports: [Hero, InvitationSection],
+  imports: [Hero, InvitationSection, EventsSection],
   templateUrl: './template-2.html',
   styleUrl: './template-2.scss',
 })
