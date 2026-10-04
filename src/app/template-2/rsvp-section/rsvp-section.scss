@@ -1,0 +1,192 @@
+.rsvp-section {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: -120px;
+    isolation: isolate;
+
+    .water-background {
+        display: block;
+        width: 100%;
+        height: max-content;
+        overflow: hidden;
+    }
+
+    .mudi-background {
+        position: absolute;
+        bottom: -65%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: auto;
+        z-index: 3;
+    }
+
+    .peacock-background {
+        position: absolute;
+        bottom: 2%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: auto;
+        max-width: 50%;
+    }
+
+    .flower1 {
+        position: absolute;
+        top: 35%;
+        left: 6%;
+        height: auto;
+        z-index: 4;
+        max-width: 160px;
+    }
+
+    .flower2 {
+        position: absolute;
+        top: 10%;
+        right: 50%;
+        transform: translateX(50%);
+        height: auto;
+        z-index: 4;
+        max-width: 160px;
+    }
+
+    .flower3 {
+        position: absolute;
+        top: 35%;
+        right: 3%;
+        transform: translateX(-50%);
+        height: auto;
+        z-index: 4;
+        max-width: 160px;
+    }
+
+    .gallery-slider {
+        position: absolute;
+        z-index: 5;
+        width: 100%;
+        height: auto;
+        top: 400px;
+        isolation: isolate;
+
+        .gallery-background {
+            display: block;
+            width: 100%;
+            // height: max-content;
+            // max-width: 1200px;
+            margin: 0 auto;
+            background-image: url('/assets/template-2/gallery.png');
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            aspect-ratio: 670 / 510;
+            overflow: hidden;
+
+            .slide {
+                position: absolute;
+                top: 17%;
+                left: 17%;
+                width: 65.5%;
+                height: 66%;
+                overflow: hidden;
+                border: none;
+                // z-index: -1;
+
+                .carousel-inner {
+                    width: 100%;
+                    height: 100%;
+                    z-index: -1;
+                }
+
+                .carousel-item {
+                    width: 100%;
+                    height: 100%;
+                    transition: transform 0.8s ease-in-out;
+                }
+
+                .carousel-item img {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+
+            // ==========================================
+            // ARROWS
+            // ==========================================
+
+            // .carousel-control-prev:hover .custom-arrow,
+            // .carousel-control-next:hover .custom-arrow {
+            //     transform: scale(1.15);
+            // }
+        }
+    }
+
+    .social-media {
+        position: absolute;
+        z-index: 5;
+        width: 100%;
+        height: auto;
+        bottom: 42%;
+        isolation: isolate;
+        text-align: center;
+
+        h1 {
+            font-family: 'cardillac', serif;
+            font-size: clamp(55px, 10vw, 250px);
+            font-weight: bold;
+            color: #540509;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'cardillac', serif;
+            font-size: clamp(55px, 10vw, 250px);
+            font-weight: 400;
+            color: #540509;
+            text-align: center;
+        }
+    }
+
+    .time {
+        position: absolute;
+        z-index: 5;
+        width: 100%;
+        height: auto;
+        bottom: 18%;
+        isolation: isolate;
+        display: flex;
+        justify-content: center;
+
+        .time-background {
+            display: block;
+            width: 50%;
+            height: max-content;
+            overflow: hidden;
+        }
+    }
+
+    .rsvp-bg {
+        width: 100%;
+        max-height: 4000px;
+    }
+
+    .rsvp-end {
+        position: absolute;
+        z-index: 5;
+        width: 100%;
+        height: auto;
+        bottom: 0;
+        isolation: isolate;
+        display: flex;
+        justify-content: center;
+
+        .rsvp-end-background {
+            display: block;
+            width: 100%;
+            height: max-content;
+            overflow: hidden;
+        }
+    }
+}

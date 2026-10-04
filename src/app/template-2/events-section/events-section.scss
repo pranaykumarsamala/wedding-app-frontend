@@ -39,8 +39,9 @@
         .content {
             font-family: 'kurale', serif;
             position: absolute;
-            top: 55%;
-            left: 47%;
+            top: 50%;
+            width: 100%;
+            left: 50%;
             transform: translate(-50%, -50%);
             color: #005c7c;
             text-align: center;
@@ -74,6 +75,7 @@
         right: 50%;
         transform: translateX(50%);
         height: auto;
+        width: 50%;
     }
 }
 
