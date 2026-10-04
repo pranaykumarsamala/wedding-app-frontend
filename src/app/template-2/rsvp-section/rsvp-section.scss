@@ -65,7 +65,7 @@
         z-index: 5;
         width: 100%;
         height: auto;
-        top: 400px;
+        top: 15%;
         isolation: isolate;
 
         .gallery-background {
@@ -128,7 +128,7 @@
         z-index: 5;
         width: 100%;
         height: auto;
-        bottom: 42%;
+        bottom: 40%;
         isolation: isolate;
         text-align: center;
 
@@ -165,11 +165,25 @@
             height: max-content;
             overflow: hidden;
         }
+
+        .timer {
+            font-size: clamp(20px, 2.4vw, 60px);
+            color: #fff;
+            top: 53%;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            font-family: 'kurale', serif;
+            font-weight: 600;
+        }
     }
 
     .rsvp-bg {
         width: 100%;
-        max-height: 4000px;
+        max-width: 1920px;
+        /* Limits max width to 1920px */
+        height: calc(4500 / 1920 * 100vw);
+        /* Maintains the 4500/1920 aspect ratio */
+        overflow: hidden;
     }
 
     .rsvp-end {

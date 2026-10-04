@@ -13,7 +13,8 @@
             <div class="position-relative gallery-background">
                 <!-- <img class="gallery-background img-fluid" src="assets/template-2/gallery.png" alt="" /> -->
 
-                <div id="carouselExample" class="carousel slide position-absolute" data-bs-ride="carousel" data-bs-interval="2000">
+                <div id="carouselExample" class="carousel slide position-absolute" data-bs-ride="carousel"
+                    data-bs-interval="2000">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img src="/assets/template-one/one/gallery-slider-1.png" class="d-block w-100" alt="...">
@@ -40,7 +41,15 @@
             <h2>Social media page link</h2>
         </div>
         <div class="time">
-            <img class="time-background img-fluid" src="assets/template-2/time-bg.png" alt="" />
+            <div class="position-relative d-flex justify-content-center align-items-center">
+                <img class="time-background img-fluid" src="assets/template-2/time-bg.png" alt="" />
+                <div class="timer position-absolute">
+                    <p>
+                        {{ days | number: '2.0-0' }} : {{ hours | number: '2.0-0' }} :
+                        {{ minutes | number: '2.0-0' }} : {{ seconds | number: '2.0-0' }}
+                    </p>
+                </div>
+            </div>
         </div>
         <div class="rsvp-end">
             <img class="img-fluid" src="assets/template-2/palace-couple.png" alt="" />
