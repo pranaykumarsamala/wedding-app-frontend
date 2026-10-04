@@ -204,3 +204,36 @@
         }
     }
 }
+
+
+@media (max-width: 768px) {
+    .rsvp-section {
+        top: -105px;
+
+        .flower1,
+        .flower2,
+        .flower3 {
+            max-width: 60px;
+        }
+
+        .rsvp-bg {
+            height: calc(2500 / 768 * 100vw);
+        }
+
+        .social-media {
+            bottom: 48%;
+        }
+
+        .time {
+            // bottom: 20%;
+
+            .time-background {
+                width: 100%;
+            }
+        }
+
+        .rsvp-end {
+            bottom: 97px;
+        }
+    }
+}

@@ -82,6 +82,18 @@
 
 @media (max-width: 768px) {
     .invitation-background {
-        min-height: 1400px;
+        min-height: 1500px;
+    }
+
+    .event-card {
+        .event {
+            .content {
+                max-width: 60%;
+
+                .title {
+                    font-size: 2rem;
+                }
+            }
+        }
     }
 }
