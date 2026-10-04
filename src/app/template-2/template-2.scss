@@ -7,6 +7,13 @@
     font-display: swap;
 }
 
+:host {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
 @font-face {
     font-family: 'kurale';
     src: url('/assets/template-2/fonts/Kurale-Regular.ttf') format('truetype');

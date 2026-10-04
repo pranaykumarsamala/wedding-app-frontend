@@ -16,6 +16,7 @@ export class Hero implements OnInit, OnDestroy {
   @ViewChild('hero', { static: true }) hero!: ElementRef<HTMLElement>;
 
   private ctx?: gsap.Context;
+  private media?: gsap.MatchMedia;
 
   ngOnInit(): void {
     gsap.registerPlugin(ScrollTrigger);
@@ -265,7 +266,8 @@ export class Hero implements OnInit, OnDestroy {
       ganesh,
       names,
       taj,
-      couple
+      couple,
+      intro
     });
 
 
@@ -279,6 +281,7 @@ export class Hero implements OnInit, OnDestroy {
       names: Element | null;
       taj: Element | null;
       couple: Element | null;
+      intro: gsap.core.Timeline;
     }
   ): void {
 
@@ -287,65 +290,65 @@ export class Hero implements OnInit, OnDestroy {
       ganesh,
       names,
       taj,
-      couple
+      couple,
+      intro
     } = elements;
 
 
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: hero,
-        start: 'top top',
-        end: '+=100%',
-        scrub: 1,
-        pin: true,
-        invalidateOnRefresh: true
-      }
-    });
+    this.media = gsap.matchMedia(hero);
+    this.media.add(
+      {
+        isMobile: '(max-width: 600px)',
+        isDesktop: '(min-width: 601px)',
+      },
+      (context) => {
+        const isMobile = context.conditions?.['isMobile'] ?? false;
+        if (isMobile) {
+          intro
+            .to(
+              taj,
+              { y: 0, yPercent: 0, opacity: 1, duration: 0.9, ease: 'power3.out' },
+              '-=0.2',
+            )
+            .to(
+              couple,
+              { y: 0, yPercent: 0, opacity: 1, scale: 1, duration: 0.9, ease: 'power3.out' },
+              '-=0.35',
+            );
+        }
 
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: hero,
+            start: 'top top',
+            end: isMobile ? 'bottom top' : '+=100%',
+            scrub: 1,
+            pin: !isMobile,
+            invalidateOnRefresh: true,
+          },
+        });
 
-    timeline
-      /* Thoran */
-      .to(thoran, {
-        yPercent: -12,
-        ease: 'none'
-      }, 0)
+        timeline
+          .to(thoran, { yPercent: -12, ease: 'none' }, 0)
+          .to(ganesh, { yPercent: -18, ease: 'none' }, 0)
+          .to(names, { yPercent: -28, opacity: 0.75, ease: 'none' }, 0);
 
-
-      /* Ganesh */
-      .to(ganesh, {
-        yPercent: -18,
-        ease: 'none'
-      }, 0)
-
-
-      /* Names */
-      .to(names, {
-        yPercent: -28,
-        opacity: 0.75,
-        ease: 'none'
-      }, 0)
-
-      /* Reveal the landscape as the invitation is explored */
-      .to(taj, {
-        y: 0,
-        yPercent: -10,
-        opacity: 1,
-        ease: 'none'
-      }, 0.22)
-
-      .to(couple, {
-        y: 0,
-        yPercent: -5,
-        opacity: 1,
-        scale: 1,
-        ease: 'none'
-      }, 0.48)
+        if (isMobile) {
+          timeline
+            .to(taj, { yPercent: -10, ease: 'none' }, 0.22)
+            .to(couple, { yPercent: -5, ease: 'none' }, 0.48);
+        } else {
+          timeline
+            .to(taj, { y: 0, yPercent: -10, opacity: 1, ease: 'none' }, 0.22)
+            .to(couple, { y: 0, yPercent: -5, opacity: 1, scale: 1, ease: 'none' }, 0.48);
+        }
+      },
+    );
 
   }
 
   ngOnDestroy(): void {
-
+    this.media?.revert();
     this.ctx?.revert();
-
   }
 }
