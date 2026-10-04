@@ -12,6 +12,7 @@ export class InvitationSection implements OnInit, OnDestroy {
   @ViewChild('invitationSection', { static: true }) invitationSection!: ElementRef<HTMLElement>;
 
   private ctx?: gsap.Context;
+  private media?: gsap.MatchMedia;
   private invitationSplits: SplitText[] = [];
 
   ngOnInit(): void {
@@ -19,7 +20,7 @@ export class InvitationSection implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-
+    this.media?.revert();
     this.ctx?.revert();
 
   }
@@ -407,15 +408,42 @@ export class InvitationSection implements OnInit, OnDestroy {
 
     intro.eventCallback('onComplete', () => peacockFloat.play());
 
-    ScrollTrigger.create({
-      trigger: section,
-      start: 'top 78%',
-      animation: intro,
-      toggleActions: 'play reverse play reverse',
-      onLeave: () => peacockFloat.pause(),
-      onLeaveBack: () => peacockFloat.pause(0),
-      invalidateOnRefresh: true
-    });
+    this.media = gsap.matchMedia(section);
+    this.media.add(
+      {
+        isMobile: '(max-width: 600px)',
+        isDesktop: '(min-width: 601px)',
+      },
+      (context) => {
+        const isMobile = context.conditions?.['isMobile'] ?? false;
+
+        ScrollTrigger.create({
+          trigger: section,
+          start: isMobile ? 'top 60%' : 'top 78%',
+          animation: intro,
+          toggleActions: isMobile ? 'play none none none' : 'play reverse play reverse',
+          onEnter: () => {
+            if (intro.progress() === 1) {
+              peacockFloat.play();
+            }
+          },
+          onEnterBack: () => {
+            if (intro.progress() === 1) {
+              peacockFloat.play();
+            }
+          },
+          onLeave: () => peacockFloat.pause(),
+          onLeaveBack: () => {
+            if (!isMobile) {
+              peacockFloat.pause(0);
+            } else {
+              peacockFloat.pause();
+            }
+          },
+          invalidateOnRefresh: true,
+        });
+      },
+    );
 
 
     // =====================================================
