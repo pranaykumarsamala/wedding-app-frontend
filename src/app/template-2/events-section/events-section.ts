@@ -40,27 +40,7 @@ export class EventsSection implements OnInit, AfterViewInit, OnDestroy {
   private createEventsAnimation(): void {
     const section = this.eventsSection.nativeElement;
     const cards = Array.from(section.querySelectorAll<HTMLElement>('.event'));
-    const titleChars: Element[] = [];
-    const dateWords: Element[] = [];
-
-    cards.forEach((card) => {
-      const title = card.querySelector<HTMLElement>('.title');
-      const date = card.querySelector<HTMLElement>('.content p');
-
-      if (title) {
-        const split = SplitText.create(title, { type: 'chars' });
-        this.eventSplits.push(split);
-        titleChars.push(...split.chars);
-      }
-
-      if (date) {
-        const split = SplitText.create(date, { type: 'words' });
-        this.eventSplits.push(split);
-        dateWords.push(...split.words);
-      }
-    });
-
-    if (cards.length === 0 || (titleChars.length === 0 && dateWords.length === 0)) {
+    if (cards.length === 0) {
       return;
     }
 
@@ -75,36 +55,56 @@ export class EventsSection implements OnInit, AfterViewInit, OnDestroy {
       }
     });
 
-    gsap.set(cards, { autoAlpha: 0, y: 36 });
-    gsap.set(titleChars, {
-      autoAlpha: 0,
-      y: 40,
-      rotationX: -45,
-      transformPerspective: 800,
-    });
-    gsap.set(dateWords, { autoAlpha: 0, y: 25 });
+    cards.forEach((card) => {
+      const title = card.querySelector<HTMLElement>('.title');
+      const date = card.querySelector<HTMLElement>('.content p');
+      const titleSplit = title ? SplitText.create(title, { type: 'chars' }) : undefined;
+      const dateSplit = date ? SplitText.create(date, { type: 'words' }) : undefined;
 
-    const intro = gsap.timeline({ paused: true, defaults: { ease: 'power3.out' } });
+      if (titleSplit) {
+        this.eventSplits.push(titleSplit);
+      }
 
-    intro
-      .to(cards, { autoAlpha: 1, y: 0, duration: 0.7, stagger: 0.1 })
-      .to(
-        titleChars,
-        { autoAlpha: 1, y: 0, rotationX: 0, duration: 0.7, stagger: 0.045 },
-        '-=0.35',
-      )
-      .to(
-        dateWords,
-        { autoAlpha: 1, y: 0, duration: 0.55, stagger: 0.04 },
-        '-=0.25',
-      );
+      if (dateSplit) {
+        this.eventSplits.push(dateSplit);
+      }
 
-    ScrollTrigger.create({
-      trigger: section,
-      start: 'top 78%',
-      onEnter: () => intro.restart(),
-      onEnterBack: () => intro.restart(),
-      invalidateOnRefresh: true,
+      gsap.set(card, { autoAlpha: 0, y: 38, scale: 0.98 });
+      gsap.set(titleSplit?.chars ?? [], {
+        autoAlpha: 0,
+        y: 36,
+        rotationX: -45,
+        transformPerspective: 800,
+      });
+      gsap.set(dateSplit?.words ?? [], { autoAlpha: 0, y: 22 });
+
+      const intro = gsap.timeline({
+        defaults: { ease: 'power3.out' },
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 84%',
+          once: true,
+          invalidateOnRefresh: true,
+        },
+      });
+
+      intro.to(card, { autoAlpha: 1, y: 0, scale: 1, duration: 0.65 });
+
+      if (titleSplit) {
+        intro.to(
+          titleSplit.chars,
+          { autoAlpha: 1, y: 0, rotationX: 0, duration: 0.65, stagger: 0.045 },
+          '-=0.25',
+        );
+      }
+
+      if (dateSplit) {
+        intro.to(
+          dateSplit.words,
+          { autoAlpha: 1, y: 0, duration: 0.5, stagger: 0.05 },
+          '-=0.25',
+        );
+      }
     });
 
     const background = section.querySelector<HTMLElement>('.invitation-background');

@@ -62,6 +62,11 @@ export class RsvpSection implements OnInit, AfterViewInit, OnDestroy {
     const subtitle = section.querySelector<HTMLElement>('.social-media h2');
     const flowers = Array.from(section.querySelectorAll<HTMLElement>('.flower1, .flower2, .flower3'));
     const peacock = section.querySelector<HTMLElement>('.peacock-background');
+    const time = section.querySelector<HTMLElement>('.time');
+    const timeBackground = section.querySelector<HTMLElement>('.time-background');
+    const timerText = section.querySelector<HTMLElement>('.timer p');
+    const rsvpEnd = section.querySelector<HTMLElement>('.rsvp-end');
+    const palaceCouple = section.querySelector<HTMLElement>('.palace-couple');
     const titleSplit = title ? SplitText.create(title, { type: 'chars' }) : undefined;
     const subtitleSplit = subtitle ? SplitText.create(subtitle, { type: 'words' }) : undefined;
 
@@ -98,6 +103,26 @@ export class RsvpSection implements OnInit, AfterViewInit, OnDestroy {
 
     if (peacock) {
       gsap.set(peacock, { autoAlpha: 0, y: 45 });
+    }
+
+    if (time) {
+      gsap.set(time, { autoAlpha: 0, y: 42 });
+    }
+
+    if (timeBackground) {
+      gsap.set(timeBackground, { scale: 0.9, rotation: -2, transformOrigin: 'center center' });
+    }
+
+    if (timerText) {
+      gsap.set(timerText, { autoAlpha: 0, y: 18 });
+    }
+
+    if (rsvpEnd) {
+      gsap.set(rsvpEnd, { autoAlpha: 0, yPercent: 12 });
+    }
+
+    if (palaceCouple) {
+      gsap.set(palaceCouple, { scale: 1.04, transformOrigin: 'center bottom' });
     }
 
     const flowerFloat = gsap.to(flowers, {
@@ -141,6 +166,58 @@ export class RsvpSection implements OnInit, AfterViewInit, OnDestroy {
       onLeaveBack: () => flowerFloat.pause(0),
       invalidateOnRefresh: true,
     });
+
+    if (time) {
+      const timerIntro = gsap.timeline({
+        defaults: { ease: 'power3.out' },
+        scrollTrigger: {
+          trigger: time,
+          start: 'top 84%',
+          once: true,
+          invalidateOnRefresh: true,
+        },
+      });
+
+      timerIntro.to(time, { autoAlpha: 1, y: 0, duration: 0.7 });
+
+      if (timeBackground) {
+        timerIntro.to(
+          timeBackground,
+          { scale: 1, rotation: 0, duration: 0.85, ease: 'back.out(1.4)' },
+          '-=0.4',
+        );
+      }
+
+      if (timerText) {
+        timerIntro.to(
+          timerText,
+          { autoAlpha: 1, y: 0, duration: 0.55 },
+          '-=0.4',
+        );
+      }
+    }
+
+    if (rsvpEnd) {
+      const endingIntro = gsap.timeline({
+        defaults: { ease: 'power3.out' },
+        scrollTrigger: {
+          trigger: rsvpEnd,
+          start: 'top 90%',
+          once: true,
+          invalidateOnRefresh: true,
+        },
+      });
+
+      endingIntro.to(rsvpEnd, { autoAlpha: 1, yPercent: 0, duration: 1 });
+
+      if (palaceCouple) {
+        endingIntro.to(
+          palaceCouple,
+          { scale: 1, duration: 1.25, ease: 'power2.out' },
+          '-=0.8',
+        );
+      }
+    }
 
     const backgrounds = section.querySelectorAll<HTMLElement>(
       '.water-background, .rsvp-bg, .gallery-background',
