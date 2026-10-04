@@ -410,9 +410,9 @@ export class InvitationSection implements OnInit, OnDestroy {
     ScrollTrigger.create({
       trigger: section,
       start: 'top 78%',
-      onEnter: () => intro.restart(),
-      onEnterBack: () => intro.restart(),
-      onLeave: () => peacockFloat.pause(0),
+      animation: intro,
+      toggleActions: 'play reverse play reverse',
+      onLeave: () => peacockFloat.pause(),
       onLeaveBack: () => peacockFloat.pause(0),
       invalidateOnRefresh: true
     });

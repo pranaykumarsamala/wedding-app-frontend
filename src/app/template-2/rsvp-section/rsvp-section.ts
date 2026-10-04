@@ -220,7 +220,7 @@ export class RsvpSection implements OnInit, AfterViewInit, OnDestroy {
     }
 
     const backgrounds = section.querySelectorAll<HTMLElement>(
-      '.water-background, .rsvp-bg, .gallery-background',
+      '.water-background, .gallery-background',
     );
     const sceneElements = section.querySelectorAll<HTMLElement>(
       '.mudi-background, .peacock-background',
