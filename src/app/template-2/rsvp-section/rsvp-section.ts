@@ -159,7 +159,7 @@ export class RsvpSection implements OnInit, AfterViewInit, OnDestroy {
       },
     });
 
-    parallax.to(backgrounds, { yPercent: 3, ease: 'none' }, 0);
+    parallax.to(backgrounds, { yPercent: 3, scale: 1.08, ease: 'none' }, 0);
     parallax.to(sceneElements, { yPercent: -12, ease: 'none' }, 0);
     parallax.to(flowers, { yPercent: (index) => (index % 2 === 0 ? -12 : 10), ease: 'none' }, 0);
 

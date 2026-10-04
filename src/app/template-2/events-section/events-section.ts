@@ -123,7 +123,7 @@ export class EventsSection implements OnInit, AfterViewInit, OnDestroy {
     });
 
     if (background) {
-      parallax.to(background, { yPercent: 4, ease: 'none' }, 0);
+      parallax.to(background, { yPercent: 4, scale: 1.1, ease: 'none' }, 0);
     }
 
     if (eventCardBackgrounds.length) {
@@ -131,7 +131,7 @@ export class EventsSection implements OnInit, AfterViewInit, OnDestroy {
     }
 
     if (landscape) {
-      parallax.to(landscape, { yPercent: 7, ease: 'none' }, 0);
+      parallax.to(landscape, { yPercent: 3, scale: 1.08, ease: 'none' }, 0);
     }
 
     if (elephant) {
