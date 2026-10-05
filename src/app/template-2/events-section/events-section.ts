@@ -21,6 +21,8 @@ export class EventsSection implements OnInit, AfterViewInit, OnDestroy {
 
   private ctx?: gsap.Context;
   private eventSplits: SplitText[] = [];
+  private cardResizeObserver?: ResizeObserver;
+  private handleWindowResize?: () => void;
 
   ngOnInit(): void {
     gsap.registerPlugin(ScrollTrigger, SplitText);
@@ -35,6 +37,11 @@ export class EventsSection implements OnInit, AfterViewInit, OnDestroy {
   ngOnDestroy(): void {
     this.ctx?.revert();
     this.eventSplits.forEach((split) => split.revert());
+    this.cardResizeObserver?.disconnect();
+
+    if (this.handleWindowResize) {
+      window.removeEventListener('resize', this.handleWindowResize);
+    }
   }
 
   private createEventsAnimation(): void {
@@ -108,9 +115,29 @@ export class EventsSection implements OnInit, AfterViewInit, OnDestroy {
     });
 
     const background = section.querySelector<HTMLElement>('.invitation-background');
+    const eventCard = section.querySelector<HTMLElement>('.event-card');
     const eventCardBackgrounds = section.querySelectorAll<HTMLElement>('.event-background');
     const landscape = section.querySelector<HTMLElement>('.event-bg-2-img');
     const elephant = section.querySelector<HTMLElement>('.elephant');
+
+    if (background && eventCard) {
+      const updateBackgroundHeight = (): void => {
+        if (window.innerWidth > 768) {
+          background.style.height = '';
+          return;
+        }
+
+        const cardMarginBottom = parseFloat(getComputedStyle(eventCard).marginBottom) || 0;
+        const contentBottom = eventCard.offsetTop + eventCard.offsetHeight + 200;
+        background.style.height = `${contentBottom}px`;
+      };
+
+      this.cardResizeObserver = new ResizeObserver(updateBackgroundHeight);
+      this.cardResizeObserver.observe(eventCard);
+      this.handleWindowResize = updateBackgroundHeight;
+      window.addEventListener('resize', updateBackgroundHeight);
+      updateBackgroundHeight();
+    }
 
     const parallax = gsap.timeline({
       scrollTrigger: {

@@ -9,7 +9,7 @@
     .invitation-background {
         display: block;
         width: 100%;
-        height: max-content;
+        height: auto;
         overflow: hidden;
     }
 }
@@ -81,9 +81,34 @@
 
 
 @media (max-width: 768px) {
-    .invitation-background {
-        min-height: 1500px;
-    }
+    // .events-section {
+    //     display: grid;
+
+    //     >.invitation-background,
+    //     >.event-card,
+    //     >.event-bg-2 {
+    //         grid-area: 1 / 1;
+    //     }
+
+    //     >.invitation-background {
+    //         height: calc(100% + 200px);
+    //         min-height: 0;
+    //     }
+
+    //     >.event-bg-2 {
+    //         align-self: end;
+    //     }
+    // }
+
+    // .event-card {
+    //     position: relative;
+    //     top: auto;
+    //     right: auto;
+    //     left: auto;
+    //     align-self: start;
+    //     margin: 0 10%;
+    //     padding-top: 200px;
+    // }
 
     .event-card {
         .event {
