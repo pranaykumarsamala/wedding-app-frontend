@@ -421,7 +421,7 @@ export class InvitationSection implements OnInit, OnDestroy {
           trigger: section,
           start: isMobile ? 'top 60%' : 'top 78%',
           animation: intro,
-          toggleActions: isMobile ? 'play none none none' : 'play reverse play reverse',
+          toggleActions: 'play none none none',
           onEnter: () => {
             if (intro.progress() === 1) {
               peacockFloat.play();
@@ -433,13 +433,7 @@ export class InvitationSection implements OnInit, OnDestroy {
             }
           },
           onLeave: () => peacockFloat.pause(),
-          onLeaveBack: () => {
-            if (!isMobile) {
-              peacockFloat.pause(0);
-            } else {
-              peacockFloat.pause();
-            }
-          },
+          onLeaveBack: () => peacockFloat.pause(),
           invalidateOnRefresh: true,
         });
       },
