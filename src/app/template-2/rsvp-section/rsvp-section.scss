@@ -1,9 +1,13 @@
+:host {
+    display: block;
+    margin-top: -120px;
+}
+
 .rsvp-section {
     position: relative;
     z-index: 2;
     width: 100%;
-    height: 100%;
-    top: -120px;
+    height: auto;
     isolation: isolate;
 
     .water-background {
@@ -67,14 +71,13 @@
     }
 
     .gallery-slider {
-        position: absolute;
+        position: relative;
         z-index: 5;
         width: 70%;
         height: auto;
-        top: 15%;
+        margin: 350px auto 0;
+        // margin: clamp(80px, 8vw, 300px) auto 0;
         isolation: isolate;
-        left: 50%;
-        transform: translate(-50%);
 
         .gallery-background {
             display: block;
@@ -132,11 +135,11 @@
     }
 
     .social-media {
-        position: absolute;
+        position: relative;
         z-index: 5;
         width: 100%;
         height: auto;
-        bottom: 40%;
+        margin-top: clamp(24px, 5vw, 80px);
         isolation: isolate;
         text-align: center;
 
@@ -159,11 +162,11 @@
     }
 
     .time {
-        position: absolute;
+        position: relative;
         z-index: 5;
         width: 100%;
         height: auto;
-        bottom: 18%;
+        margin-top: clamp(24px, 5vw, 80px);
         isolation: isolate;
         display: flex;
         justify-content: center;
@@ -187,21 +190,26 @@
     }
 
     .rsvp-bg {
+        position: absolute;
+        inset: 0;
         width: 100%;
         max-width: 1920px;
-        // height: auto;
-        /* Limits max width to 1920px */
-        height: calc(4500 / 1920 * 100vw);
-        /* Maintains the 4500/1920 aspect ratio */
+        height: 100%;
+        object-fit: fill;
         overflow: hidden;
+        pointer-events: none;
+    }
+
+    .rsvp-content {
+        display: flow-root;
     }
 
     .rsvp-end {
-        position: absolute;
+        position: relative;
         z-index: 5;
         width: 100%;
         height: auto;
-        bottom: 0;
+        margin-top: clamp(20px, 4vw, 72px);
         isolation: isolate;
         display: flex;
         justify-content: center;
@@ -218,10 +226,12 @@
 
 @media (max-width: 768px) {
     .rsvp-section {
-        top: -105px;
-
         .water-background {
             max-height: 150px;
+        }
+
+        .gallery-slider {
+            margin-top: 80px;
         }
 
         .flower1,
@@ -230,26 +240,16 @@
             max-width: 60px;
         }
 
-        .rsvp-bg {
-            height: calc(2500 / 768 * 100vw);
-        }
-
-        .social-media {
-            bottom: 48%;
-        }
-
         .time {
-            // bottom: 20%;
-
             .time-background {
                 width: 100%;
                 max-width: 100%;
                 height: auto;
             }
         }
+    }
 
-        .rsvp-end {
-            bottom: 97px;
-        }
+    :host {
+        margin-top: -105px;
     }
 }
