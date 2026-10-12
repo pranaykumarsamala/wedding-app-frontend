@@ -139,9 +139,9 @@ export class Hero implements OnInit, OnDestroy {
       '.names h1:last-of-type'
     );
 
-    // const moon = hero.querySelector(
-    //   '.moon'
-    // );
+    const moon = hero.querySelector(
+      '.moon'
+    );
 
     const taj = hero.querySelector('.taj');
 
@@ -158,6 +158,12 @@ export class Hero implements OnInit, OnDestroy {
     });
 
     gsap.set(ganesh, {
+      y: -20,
+      opacity: 0,
+      scale: 0.9
+    });
+
+    gsap.set(moon, {
       y: -20,
       opacity: 0,
       scale: 0.9
@@ -184,10 +190,7 @@ export class Hero implements OnInit, OnDestroy {
       scale: 0.95
     });
 
-    // gsap.set(moon, {
-    //   x: 20,
-    //   opacity: 0
-    // });
+
 
     gsap.to(hangingFlowers, {
       rotation: 3,
@@ -233,6 +236,13 @@ export class Hero implements OnInit, OnDestroy {
         duration: 0.9
       }, '-=0.7')
 
+      .to(moon, {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 0.9
+      }, '-=0.7')
+
       .to(eyebrow, {
         opacity: 1,
         y: 0,
@@ -264,6 +274,7 @@ export class Hero implements OnInit, OnDestroy {
     this.createScrollAnimation(hero, {
       thoran,
       ganesh,
+      moon,
       names,
       taj,
       couple,
@@ -278,6 +289,7 @@ export class Hero implements OnInit, OnDestroy {
     elements: {
       thoran: Element | null;
       ganesh: Element | null;
+      moon: Element | null;
       names: Element | null;
       taj: Element | null;
       couple: Element | null;
@@ -288,6 +300,7 @@ export class Hero implements OnInit, OnDestroy {
     const {
       thoran,
       ganesh,
+      moon,
       names,
       taj,
       couple,
@@ -331,6 +344,7 @@ export class Hero implements OnInit, OnDestroy {
         timeline
           .to(thoran, { yPercent: -12, ease: 'none' }, 0)
           .to(ganesh, { yPercent: -18, ease: 'none' }, 0)
+          .to(moon, { yPercent: -18, ease: 'none' }, 0)
           .to(names, { yPercent: -28, opacity: 1, ease: 'none' }, 0);
 
         if (isMobile) {
