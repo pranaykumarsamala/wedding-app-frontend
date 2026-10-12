@@ -8,15 +8,19 @@
 }
 
 .invitation-background {
+    position: absolute;
+    inset: 0;
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: fill;
     overflow: hidden;
+    pointer-events: none;
 }
 
 .peacock {
     position: absolute;
-    width: 42%;
+    width: 35%;
     top: -18%;
     right: 20%;
     z-index: 3;
@@ -29,10 +33,9 @@
 -------------------------------- */
 
 .invitation-content {
-    position: absolute;
-    top: 40%;
-    left: 10%;
-    right: 10%;
+    position: relative;
+    margin: 0 10%;
+    padding: 43vw 0 8vw;
     text-align: center;
     z-index: 3;
 }
@@ -88,11 +91,9 @@
 
 @media (max-width: 768px) {
     .invitation-content {
-        top: 30%;
-    }
-
-    .invitation-background {
-        height: 100%;
+        padding-top: 41vw;
+        padding-bottom: 10vw;
+        margin: 0 12%;
     }
 
     .save-date,
