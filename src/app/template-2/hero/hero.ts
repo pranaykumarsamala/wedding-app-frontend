@@ -331,7 +331,7 @@ export class Hero implements OnInit, OnDestroy {
         timeline
           .to(thoran, { yPercent: -12, ease: 'none' }, 0)
           .to(ganesh, { yPercent: -18, ease: 'none' }, 0)
-          .to(names, { yPercent: -28, opacity: 0.75, ease: 'none' }, 0);
+          .to(names, { yPercent: -28, opacity: 1, ease: 'none' }, 0);
 
         if (isMobile) {
           timeline

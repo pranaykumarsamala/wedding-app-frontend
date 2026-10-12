@@ -69,10 +69,12 @@
     .gallery-slider {
         position: absolute;
         z-index: 5;
-        width: 100%;
+        width: 70%;
         height: auto;
         top: 15%;
         isolation: isolate;
+        left: 50%;
+        transform: translate(-50%);
 
         .gallery-background {
             display: block;
@@ -144,6 +146,7 @@
             font-weight: bold;
             color: #540509;
             text-align: center;
+            margin-bottom: 0px;
         }
 
         h2 {
