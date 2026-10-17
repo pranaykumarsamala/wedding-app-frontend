@@ -1,255 +1,226 @@
 :host {
-    display: block;
-    margin-top: -120px;
+  display: block;
+  margin-top: -120px;
 }
 
 .rsvp-section {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  isolation: isolate;
+  .water-background {
+    display: block;
+    width: 100%;
+    height: max-content;
+    overflow: hidden;
+  }
+  .mudi-background {
+    position: absolute;
+    bottom: -65%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: auto;
+    z-index: 3;
+  }
+  .peacock-background {
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    max-width: 50%;
+  }
+  .flower1 {
+    position: absolute;
+    top: 35%;
+    left: 6%;
+    height: auto;
+    z-index: 4;
+    max-width: 160px;
+  }
+  .flower2 {
+    position: absolute;
+    top: 10%;
+    // right: 50%;
+    // transform: translateX(50%);
+    height: auto;
+    z-index: 4;
+    max-width: 160px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .flower3 {
+    position: absolute;
+    top: 35%;
+    right: 3%;
+    transform: translateX(-50%);
+    height: auto;
+    z-index: 4;
+    max-width: 160px;
+  }
+  .gallery-slider {
     position: relative;
-    z-index: 2;
+    z-index: 5;
+    width: 70%;
+    height: auto;
+    margin: 350px auto 0;
+    // margin: clamp(80px, 8vw, 300px) auto 0;
+    isolation: isolate;
+    .gallery-background {
+      display: block;
+      width: 100%;
+      // height: max-content;
+      // max-width: 1200px;
+      margin: 0 auto;
+      background-image: url('/assets/template-2/gallery.png');
+      background-size: 100% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      aspect-ratio: 670 / 510;
+      overflow: hidden;
+      .slide {
+        position: absolute;
+        top: 17%;
+        left: 17%;
+        width: 65.5%;
+        height: 66%;
+        overflow: hidden;
+        border: none;
+        // z-index: -1;
+        .carousel-inner {
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+        }
+        .carousel-item {
+          width: 100%;
+          height: 100%;
+          transition: transform 0.8s ease-in-out;
+        }
+        .carousel-item img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+      // ==========================================
+      // ARROWS
+      // ==========================================
+      // .carousel-control-prev:hover .custom-arrow,
+      // .carousel-control-next:hover .custom-arrow {
+      //     transform: scale(1.15);
+      // }
+    }
+  }
+  .social-media {
+    position: relative;
+    z-index: 5;
     width: 100%;
     height: auto;
+    margin-top: clamp(24px, 5vw, 80px);
     isolation: isolate;
-
-    .water-background {
-        display: block;
-        width: 100%;
-        height: max-content;
-        overflow: hidden;
+    text-align: center;
+    h1 {
+      font-family: 'cardillac', serif;
+      font-size: clamp(55px, 10vw, 250px);
+      font-weight: bold;
+      color: #540509;
+      text-align: center;
+      margin-bottom: 0px;
     }
-
-    .mudi-background {
-        position: absolute;
-        bottom: -65%;
-        left: 50%;
-        transform: translateX(-50%);
-        height: auto;
-        z-index: 3;
+    h2 {
+      font-family: 'cardillac', serif;
+      font-size: clamp(55px, 10vw, 250px);
+      font-weight: 400;
+      color: #540509;
+      text-align: center;
     }
-
-    .peacock-background {
-        position: absolute;
-        bottom: 2%;
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
-        height: auto;
-        max-width: 50%;
+  }
+  .time {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    height: auto;
+    margin-top: clamp(24px, 5vw, 80px);
+    isolation: isolate;
+    display: flex;
+    justify-content: center;
+    .time-background {
+      display: block;
+      width: 50%;
+      height: max-content;
+      overflow: hidden;
     }
-
-    .flower1 {
-        position: absolute;
-        top: 35%;
-        left: 6%;
-        height: auto;
-        z-index: 4;
-        max-width: 160px;
+    .timer {
+      font-size: clamp(20px, 2.4vw, 60px);
+      color: #fff;
+      top: 53%;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      font-family: 'kurale', serif;
+      font-weight: 600;
     }
-
-    .flower2 {
-        position: absolute;
-        top: 10%;
-        // right: 50%;
-        // transform: translateX(50%);
-        height: auto;
-        z-index: 4;
-        max-width: 160px;
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
+  }
+  .rsvp-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    max-width: 1920px;
+    height: 100%;
+    object-fit: fill;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .rsvp-content {
+    display: flow-root;
+  }
+  .rsvp-end {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    height: auto;
+    margin-top: clamp(20px, 4vw, 72px);
+    isolation: isolate;
+    display: flex;
+    justify-content: center;
+    .rsvp-end-background {
+      display: block;
+      width: 100%;
+      height: max-content;
+      overflow: hidden;
     }
-
-    .flower3 {
-        position: absolute;
-        top: 35%;
-        right: 3%;
-        transform: translateX(-50%);
-        height: auto;
-        z-index: 4;
-        max-width: 160px;
-    }
-
-    .gallery-slider {
-        position: relative;
-        z-index: 5;
-        width: 70%;
-        height: auto;
-        margin: 350px auto 0;
-        // margin: clamp(80px, 8vw, 300px) auto 0;
-        isolation: isolate;
-
-        .gallery-background {
-            display: block;
-            width: 100%;
-            // height: max-content;
-            // max-width: 1200px;
-            margin: 0 auto;
-            background-image: url('/assets/template-2/gallery.png');
-            background-size: 100% 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            aspect-ratio: 670 / 510;
-            overflow: hidden;
-
-            .slide {
-                position: absolute;
-                top: 17%;
-                left: 17%;
-                width: 65.5%;
-                height: 66%;
-                overflow: hidden;
-                border: none;
-                // z-index: -1;
-
-                .carousel-inner {
-                    width: 100%;
-                    height: 100%;
-                    z-index: -1;
-                }
-
-                .carousel-item {
-                    width: 100%;
-                    height: 100%;
-                    transition: transform 0.8s ease-in-out;
-                }
-
-                .carousel-item img {
-                    width: 100%;
-                    height: 100%;
-                    display: block;
-                    object-fit: cover;
-                    object-position: center;
-                }
-            }
-
-            // ==========================================
-            // ARROWS
-            // ==========================================
-
-            // .carousel-control-prev:hover .custom-arrow,
-            // .carousel-control-next:hover .custom-arrow {
-            //     transform: scale(1.15);
-            // }
-        }
-    }
-
-    .social-media {
-        position: relative;
-        z-index: 5;
-        width: 100%;
-        height: auto;
-        margin-top: clamp(24px, 5vw, 80px);
-        isolation: isolate;
-        text-align: center;
-
-        h1 {
-            font-family: 'cardillac', serif;
-            font-size: clamp(55px, 10vw, 250px);
-            font-weight: bold;
-            color: #540509;
-            text-align: center;
-            margin-bottom: 0px;
-        }
-
-        h2 {
-            font-family: 'cardillac', serif;
-            font-size: clamp(55px, 10vw, 250px);
-            font-weight: 400;
-            color: #540509;
-            text-align: center;
-        }
-    }
-
-    .time {
-        position: relative;
-        z-index: 5;
-        width: 100%;
-        height: auto;
-        margin-top: clamp(24px, 5vw, 80px);
-        isolation: isolate;
-        display: flex;
-        justify-content: center;
-
-        .time-background {
-            display: block;
-            width: 50%;
-            height: max-content;
-            overflow: hidden;
-        }
-
-        .timer {
-            font-size: clamp(20px, 2.4vw, 60px);
-            color: #fff;
-            top: 53%;
-            transform: translate(-50%, -50%);
-            left: 50%;
-            font-family: 'kurale', serif;
-            font-weight: 600;
-        }
-    }
-
-    .rsvp-bg {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        max-width: 1920px;
-        height: 100%;
-        object-fit: fill;
-        overflow: hidden;
-        pointer-events: none;
-    }
-
-    .rsvp-content {
-        display: flow-root;
-    }
-
-    .rsvp-end {
-        position: relative;
-        z-index: 5;
-        width: 100%;
-        height: auto;
-        margin-top: clamp(20px, 4vw, 72px);
-        isolation: isolate;
-        display: flex;
-        justify-content: center;
-
-        .rsvp-end-background {
-            display: block;
-            width: 100%;
-            height: max-content;
-            overflow: hidden;
-        }
-    }
+  }
 }
 
-
 @media (max-width: 768px) {
-    .rsvp-section {
-        .water-background {
-            max-height: 150px;
-        }
-
-        .gallery-slider {
-            margin-top: 80px;
-        }
-
-        .flower1,
-        .flower2,
-        .flower3 {
-            max-width: 60px;
-        }
-
-        .time {
-            .time-background {
-                width: 100%;
-                max-width: 100%;
-                height: auto;
-            }
-        }
+  .rsvp-section {
+    .water-background {
+      max-height: 150px;
     }
-
-    :host {
-        margin-top: -105px;
+    .gallery-slider {
+      margin-top: 80px;
     }
+    .flower1,
+    .flower2,
+    .flower3 {
+      max-width: 60px;
+    }
+    .time {
+      .time-background {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+  :host {
+    margin-top: -105px;
+  }
 }
