@@ -288,7 +288,7 @@
     min-height: auto;
   }
   .hero-container {
-    padding: 38px 24px 70px;
+    padding: 38px 24px 20px;
   }
   .hero-row {
     min-height: auto;
@@ -369,9 +369,10 @@
     font-size: 15px;
     letter-spacing: 1.8px;
   }
-  .mobile-device {
-    width: auto;
-    height: 370px;
+  .mobile-device,
+  .desktop-device {
+    width: 100%;
+    height: 100%;
   }
   .preview-stage {
     min-height: 250px;
