@@ -15,12 +15,13 @@ interface InfoItem {
 export class InvitationCta {
   title = 'SEND YOUR\nINVITATION.';
 
-  description = `Add a custom domain at checkout. Pay double your plan — one payment covers both the plan and the domain add-on. Already own a name? You can connect that too.`;
+  description = `Turn your big day into a invitation your guests will remember. Personalised, shareable and ready in minutes, with a custom domain to make it truly yours.`;
 
   infoList: InfoItem[] = [
-    { label: 'FROM', value: '₹799', subValue: '/ ONE -TIME' },
-    { label: 'TEMPLATES', value: '7 ACROSS 33 VOICES' },
-    { label: 'PAYMENTS', value: 'UPI. CARDS. WALLETS' },
-    { label: 'INVITATIONS', value: '177 BUILT' },
+    { label: 'MEMORIES', value: 'PHOTO GALLERY. VIDEO' },
+    { label: 'MUSIC', value: 'YOUR SONG. PLAYS ON OPEN' },
+    { label: 'COUNTDOWN', value: 'LIVE TILL THE BIG DAY' },
+    { label: 'DELIVERY', value: 'READY IN MINUTES' },
+    { label: 'GUESTS', value: 'UNLIMITED INVITES' },
   ];
 }

@@ -63,45 +63,42 @@ export class Templates implements AfterViewInit, OnDestroy {
   steps: WorkStep[] = [
     {
       number: '01',
-      title: 'Choose a Wedding Template',
-      description:
-        'Browse our collection of wedding invitation templates and preview the designs that catch your eye. ',
+      title: 'Purchase Your Template',
+      description: 'Complete your purchase to receive instant access to your template. ',
       buttonText: 'Get started',
       link: '#get-started',
       image: 'assets/home-page/shapes/1.png',
     },
     {
       number: '02',
-      title: 'Add Your Wedding Details',
-      description:
-        'Enter the requested information, such as your names, wedding date, venue, personal message and selected photos. Depending on the available features, ',
+      title: 'Access Your Template',
+      description: 'Check your email and click the template access link. ',
       buttonText: 'See how',
       link: '#content',
       image: 'assets/home-page/shapes/2.png',
     },
     {
       number: '03',
-      title: 'Review Your Invitation',
-      description:
-        'Preview your invitation and check that your names, dates, venue and details are correct. Use the editing options to make permitted adjustments before proceeding.',
+      title: 'Edit Your Template',
+      description: 'Open your template and update it with your details. ',
       buttonText: 'Review it',
       link: '#review',
       image: 'assets/home-page/shapes/3.png',
     },
     {
       number: '04',
-      title: 'Complete Your Order',
+      title: 'Publish Your Final Link',
       description:
-        'Review the plan, price, and included features carefully before completing your payment. Check any optional extras and follow the instructions displayed during checkout.',
+        'Preview your final design and publish your link using a free or custom domain. ',
       buttonText: 'Post it',
       link: '#publish',
       image: 'assets/home-page/shapes/4.png',
     },
     {
       number: '05',
-      title: 'Publish and Share',
+      title: '5. Share With Your Guests',
       description:
-        'Follow the publishing instructions and access your invitation website link when it is ready. Share it with your guests through your preferred messaging or social platforms.',
+        'Your final link is ready! Share it with your guests so they can view all the details. ',
       buttonText: 'Track now',
       link: '#progress',
       image: 'assets/home-page/shapes/5.png',
