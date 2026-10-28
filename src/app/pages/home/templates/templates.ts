@@ -63,54 +63,48 @@ export class Templates implements AfterViewInit, OnDestroy {
   steps: WorkStep[] = [
     {
       number: '01',
-      title: 'SHARE YOUR IDEAS',
-      description: 'Tell us about your brand, goals and the content you want to create.',
+      title: 'Choose a Wedding Template',
+      description:
+        'Browse our collection of wedding invitation templates and preview the designs that catch your eye. Consider the style, layout and available features before selecting a template that suits your celebration.',
       buttonText: 'Get started',
       link: '#get-started',
       image: 'assets/home-page/shapes/1.png',
     },
     {
       number: '02',
-      title: 'CREATE YOUR CONTENT',
-      description: 'Our team turns your ideas into engaging content tailored to your brand.',
+      title: 'Add Your Wedding Details',
+      description:
+        'Enter the requested information, such as your names, wedding date, venue, personal message and selected photos. Depending on the available features, you may also be able to add a schedule, location link or RSVP details.',
       buttonText: 'See how',
       link: '#content',
       image: 'assets/home-page/shapes/2.png',
     },
     {
       number: '03',
-      title: 'REVIEW AND REFINE',
-      description: 'Review the content and request revisions until everything feels right.',
+      title: 'Review Your Invitation',
+      description:
+        'Preview your invitation and check that your names, dates, venue and other details are correct. Use the editing options available for your selected template to make any permitted adjustments before proceeding.',
       buttonText: 'Review it',
       link: '#review',
       image: 'assets/home-page/shapes/3.png',
     },
     {
       number: '04',
-      title: 'POST WHEN READY',
+      title: 'Complete Your Order',
       description:
-        'Your final bundle lands in your inbox, ready to post whenever your content calendar needs it.',
+        'Review the plan, price and included features before completing payment. Check any optional extras and follow the instructions displayed during checkout.',
       buttonText: 'Post it',
       link: '#publish',
       image: 'assets/home-page/shapes/4.png',
     },
     {
       number: '05',
-      title: 'TRACK YOUR PROGRESS',
+      title: 'Publish and Share',
       description:
-        'Monitor your content performance and discover what works best for your audience.',
+        'Follow the publishing instructions and access your invitation website link when it is ready. Share it with your guests through your preferred messaging or social platforms.',
       buttonText: 'Track now',
       link: '#progress',
       image: 'assets/home-page/shapes/5.png',
-    },
-    {
-      number: '06',
-      title: 'GROW YOUR BRAND',
-      description:
-        'Use your content insights to improve your strategy and grow your brand consistently.',
-      buttonText: 'Grow now',
-      link: '#growth',
-      image: 'assets/home-page/shapes/6.png',
     },
   ];
 
