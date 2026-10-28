@@ -65,7 +65,7 @@ export class Templates implements AfterViewInit, OnDestroy {
       number: '01',
       title: 'Choose a Wedding Template',
       description:
-        'Browse our collection of wedding invitation templates and preview the designs that catch your eye. Consider the style, layout and available features before selecting a template that suits your celebration.',
+        'Browse our collection of wedding invitation templates and preview the designs that catch your eye. ',
       buttonText: 'Get started',
       link: '#get-started',
       image: 'assets/home-page/shapes/1.png',
@@ -74,7 +74,7 @@ export class Templates implements AfterViewInit, OnDestroy {
       number: '02',
       title: 'Add Your Wedding Details',
       description:
-        'Enter the requested information, such as your names, wedding date, venue, personal message and selected photos. Depending on the available features, you may also be able to add a schedule, location link or RSVP details.',
+        'Enter the requested information, such as your names, wedding date, venue, personal message and selected photos. Depending on the available features, ',
       buttonText: 'See how',
       link: '#content',
       image: 'assets/home-page/shapes/2.png',
@@ -83,7 +83,7 @@ export class Templates implements AfterViewInit, OnDestroy {
       number: '03',
       title: 'Review Your Invitation',
       description:
-        'Preview your invitation and check that your names, dates, venue and other details are correct. Use the editing options available for your selected template to make any permitted adjustments before proceeding.',
+        'Preview your invitation and check that your names, dates, venue and details are correct. Use the editing options to make permitted adjustments before proceeding.',
       buttonText: 'Review it',
       link: '#review',
       image: 'assets/home-page/shapes/3.png',
@@ -92,7 +92,7 @@ export class Templates implements AfterViewInit, OnDestroy {
       number: '04',
       title: 'Complete Your Order',
       description:
-        'Review the plan, price and included features before completing payment. Check any optional extras and follow the instructions displayed during checkout.',
+        'Review the plan, price, and included features carefully before completing your payment. Check any optional extras and follow the instructions displayed during checkout.',
       buttonText: 'Post it',
       link: '#publish',
       image: 'assets/home-page/shapes/4.png',
