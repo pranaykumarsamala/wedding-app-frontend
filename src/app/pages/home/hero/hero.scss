@@ -147,7 +147,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   object-position: top center;
 }
 
@@ -331,10 +331,13 @@
   }
   .mobile-device {
     width: 205px;
-    height: 405px;
+    height: 100%;
   }
   .desktop-device {
-    width: min(100%, 430px);
+    width: 100%;
+    max-width: 430px;
+    box-sizing: border-box;
+    margin: 0 auto;
   }
   .device-switcher {
     margin-top: 8px;
