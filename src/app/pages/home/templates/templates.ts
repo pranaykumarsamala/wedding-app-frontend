@@ -71,7 +71,7 @@ export class Templates implements AfterViewInit, OnDestroy {
     },
     {
       number: '02',
-      title: 'WE CREATE YOUR CONTENT',
+      title: 'CREATE YOUR CONTENT',
       description: 'Our team turns your ideas into engaging content tailored to your brand.',
       buttonText: 'See how',
       link: '#content',
@@ -87,7 +87,7 @@ export class Templates implements AfterViewInit, OnDestroy {
     },
     {
       number: '04',
-      title: 'POST WHEN YOU’RE READY',
+      title: 'POST WHEN READY',
       description:
         'Your final bundle lands in your inbox, ready to post whenever your content calendar needs it.',
       buttonText: 'Post it',

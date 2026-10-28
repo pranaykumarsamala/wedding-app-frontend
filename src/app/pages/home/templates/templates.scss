@@ -242,6 +242,7 @@ $color-cream: #f7f3e8;
     padding: 30px 3%;
   }
   .step-content {
+    padding-bottom: 20px;
     .step-number {
       font-size: 22px;
       margin-bottom: 18px;
@@ -249,11 +250,13 @@ $color-cream: #f7f3e8;
     h3 {
       font-size: 23px;
       margin-bottom: 24px;
+      min-height: auto;
     }
     p {
       font-size: 18px;
       line-height: 1.35;
-      margin-bottom: 28px;
+      margin-bottom: 15px;
+      min-height: auto;
     }
   }
   .step-visual {
@@ -269,9 +272,11 @@ $color-cream: #f7f3e8;
   }
   .step-content h3 {
     font-size: 21px;
+    // min-height: 45px;
   }
   .step-content p {
     font-size: 16px;
+    min-height: 80px;
   }
   .step-visual {
     width: min(62%, 200px);
