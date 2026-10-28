@@ -1,0 +1,157 @@
+@use 'sass:color';
+// SCSS Variables
+$bg-color: #f7f3e8;
+$text-dark: #000743;
+$border-color: #000743;
+$color-navy-blue: #000743;
+:host {
+    display: block;
+    background-color: $bg-color;
+    width: 100%;
+}
+
+.invitation-section {
+    // background-color: $bg-color;
+    color: $text-dark;
+    font-family: 'Pavot', sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    // Header Title
+    .invitation-title {
+        font-size: 90px;
+        font-weight: 900;
+        line-height: 1.05;
+        letter-spacing: 4px;
+        color: $text-dark;
+        text-transform: uppercase;
+        overflow-wrap: break-word;
+    }
+    // Description
+    .invitation-description {
+        font-size: 22px;
+        font-weight: 500;
+        color: $text-dark;
+        font-family: 'Proxima Nova';
+        font-style: normal;
+        max-width: 480px;
+    }
+    // Action Button
+    .btn-learn-more {
+        background-color: $color-navy-blue;
+        color: $bg-color;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        padding: 8px 14px;
+        font-family: 'Proxima Nova';
+        font-style: normal;
+        border-radius: 50px;
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        &:hover {
+            background-color: color.adjust(#0d0000, $lightness: 10%);
+            color: $bg-color;
+            transform: translateY(-2px);
+        }
+        svg {
+            transition: transform 0.3s ease;
+        }
+        &:hover svg {
+            transform: translateX(4px);
+        }
+    }
+    // Desktop Vertical Divider
+    .border-left-divider {
+        @media (min-width: 992px) {
+            border-left: 1.5px solid $border-color;
+            padding-left: 3rem !important;
+            font-style: normal;
+        }
+    }
+    // Key-Value Grid
+    .info-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.8rem;
+        padding-top: 1rem;
+        .info-row {
+            display: grid;
+            font-family: 'Proxima Nova';
+            font-style: normal;
+            grid-template-columns: 140px minmax(0, 1fr);
+            align-items: center;
+            gap: 1rem;
+            .info-label {
+                font-size: 17px;
+                font-weight: 400;
+                letter-spacing: 1.5px;
+                color: $text-dark;
+                text-transform: uppercase;
+            }
+            .info-value {
+                font-size: 19px;
+                font-weight: 700;
+                letter-spacing: 1px;
+                color: $text-dark;
+                text-transform: uppercase;
+                overflow-wrap: anywhere;
+                small {
+                    font-size: 15px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+// Tablet
+@media (max-width: 991px) {
+    .invitation-section {
+        .invitation-title {
+            font-size: clamp(48px, 7vw, 70px);
+        }
+        .border-left-divider {
+            border-left: none;
+            // padding-left: 0 !important;
+        }
+    }
+}
+
+// Mobile
+@media (max-width: 576px) {
+    .invitation-section {
+        .invitation-title {
+            font-size: 50px;
+            line-height: 1.1;
+            letter-spacing: 1px;
+        }
+        .invitation-description {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .info-grid {
+            gap: 1.2rem;
+            font-style: normal;
+            .info-row {
+                grid-template-columns: 120px minmax(0, 1fr);
+                gap: 0.5rem;
+                .info-label {
+                    font-size: 13px;
+                    letter-spacing: 1px;
+                }
+                .info-value {
+                    font-size: 15px;
+                    letter-spacing: 0.5px;
+                    small {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+        .btn-learn-more {
+            padding: 11px 22px;
+        }
+    }
+}

@@ -1,0 +1,56 @@
+<!-- Templates Slider -->
+<section class="templates-section">
+    <div class="container">
+        <header class="templates-heading">
+            <span>Templates</span>
+            <h2>YOUR STORY <i>•</i> YOUR STYLE</h2>
+        </header>
+
+        <div class="template-slider">
+            <swiper-container #templateSwiper class="template-swiper" slides-per-view="1" space-between="24" loop="true" speed="800" autoplay="true" autoplay-delay="2500" autoplay-disable-on-interaction="false" grab-cursor="true" watch-overflow="true">
+                @for (template of templates; track template.id) {
+                <swiper-slide>
+                    <div class="template-card">
+                        <img [src]="template.image" [alt]="template.alt" loading="lazy" class="w-100" />
+                    </div>
+                </swiper-slide>
+                }
+            </swiper-container>
+
+            <div class="template-accent" aria-hidden="true">
+                <span class="accent-maroon"></span>
+                <span class="accent-navy"></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works -->
+<section class="how-it-works">
+    <header class="section-heading">
+        <span>All-in-one - <strong>Ready to post</strong></span>
+        <h2>HOW IT ALL WORKS:</h2>
+    </header>
+
+    <div class="steps-list">
+        @for (step of steps; track step.number; let i = $index) {
+        <article class="step-row" [class.active]="activeIndex === i">
+            <div class="step-content">
+                <span class="step-number">{{ step.number }}</span>
+                <h3>{{ step.title }}</h3>
+                <p>{{ step.description }}</p>
+
+                <a class="step-link" [href]="step.link">
+            {{ step.buttonText }}
+            <span aria-hidden="true">⟶</span>
+          </a>
+            </div>
+
+            <div class="step-visual">
+                <div class="card-back"></div>
+                <img [src]="step.image" [alt]="step.title" loading="lazy" />
+            </div>
+        </article>
+        }
+    </div>
+</section>

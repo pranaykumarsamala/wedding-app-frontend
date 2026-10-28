@@ -1,0 +1,291 @@
+$color-dark-maroon: #3e000c;
+$color-sky-blue: #65b8dc;
+$color-navy-blue: #000743;
+$color-black: #0d0000;
+$color-dark-green: #00421c;
+$color-off-white: #f7f3e8;
+$color-cream: #f7f3e8;
+:host {
+  display: block;
+  width: 100%;
+}
+
+.templates-section {
+  padding-top: 30px;
+  font-family: 'Proxima Nova';
+}
+
+.templates-heading {
+  color: $color-dark-maroon;
+  font-family: 'Proxima Nova';
+  text-align: center;
+  span {
+    display: block;
+    font-size: 17px;
+    letter-spacing: 4px;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  h2 {
+    font-size: clamp(38px, 5.7vw, 84px);
+    font-weight: 700;
+    font-family: 'Pavot', sans-serif;
+    margin-bottom: 40px;
+  }
+}
+
+.templates-section {
+  background: $color-cream;
+  .template-slider,
+  .template-swiper .template-card img {
+    border-radius: 60px;
+  }
+}
+
+.how-it-works {
+  background: $color-cream;
+  color: $color-navy-blue;
+  padding: 55px 7% 0px;
+  overflow: clip;
+}
+
+// Centered section heading
+.section-heading {
+  text-align: center;
+  margin: 0 auto 5px;
+  font-family: 'Proxima Nova';
+  span {
+    display: block;
+    font-size: 17px;
+    letter-spacing: 4px;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  h2 {
+    margin: 0;
+    color: $color-navy-blue;
+    font-family: 'Pavot', sans-serif;
+    font-weight: 700;
+    font-size: clamp(38px, 5.7vw, 84px);
+    line-height: 1.15;
+  }
+}
+
+// Stacked cards
+.steps-list {
+  position: relative;
+}
+
+.step-row {
+  min-height: 510px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: clamp(30px, 6vw, 90px);
+  position: sticky;
+  top: 25px;
+  padding: 45px 7%;
+  border-radius: 20px;
+  isolation: isolate;
+  font-family: 'Proxima Nova';
+  &:nth-child(1) {
+    z-index: 1;
+  }
+  &:nth-child(2) {
+    z-index: 2;
+  }
+  &:nth-child(3) {
+    z-index: 3;
+  }
+  &:nth-child(4) {
+    z-index: 4;
+  }
+  &:nth-child(5) {
+    z-index: 5;
+  }
+  &:nth-child(6) {
+    z-index: 6;
+  }
+}
+
+// Left content
+.step-content {
+  font-family: 'Proxima Nova';
+  max-width: 560px;
+  background: $color-cream;
+  .step-number {
+    display: block;
+    font-size: 26px;
+    margin-bottom: 25px;
+    color: $color-navy-blue;
+  }
+  h3 {
+    margin: 0 0 30px;
+    font-size: clamp(22px, 2vw, 25px);
+    font-weight: 600;
+    color: $color-navy-blue;
+  }
+  p {
+    margin: 0 0 41px;
+    font-size: clamp(18px, 1.8vw, 20px);
+    color: $color-navy-blue;
+  }
+}
+
+// Maroon button
+.step-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 9px 12px;
+  min-width: 139px;
+  border-radius: 50px;
+  background: $color-dark-maroon;
+  border: 1px solid $color-dark-maroon;
+  color: $color-cream;
+  text-decoration: none;
+  font-size: 18px;
+  transition:
+    gap 0.3s ease,
+    background 0.3s ease;
+  span {
+    font-size: 23px;
+    line-height: 1;
+  }
+  &:hover {
+    gap: 28px;
+    background: $color-dark-green;
+    border-color: $color-dark-green;
+  }
+  &:focus-visible {
+    outline: 3px solid $color-sky-blue;
+    outline-offset: 4px;
+  }
+}
+
+// Image and offset shadow card
+.step-visual {
+  width: min(100%, 290px);
+  aspect-ratio: 0.78;
+  justify-self: center;
+  position: relative;
+  isolation: isolate;
+  img,
+  .card-back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 35px;
+  }
+  img {
+    transform: rotate(3deg);
+    z-index: 1;
+    transition: transform 0.45s ease;
+  }
+  .card-back {
+    // background: $color-navy-blue;
+    transform: rotate(-5deg) translate(9px, 5px);
+    transition: transform 0.45s ease;
+  }
+}
+
+.step-row.active .step-visual {
+  img {
+    transform: rotate(0deg);
+  }
+  .card-back {
+    transform: rotate(-6deg) translate(12px, 7px);
+  }
+}
+
+// Tablet
+@media (max-width: 1024px) {
+  .how-it-works {
+    padding-inline: 4%;
+  }
+  .step-row {
+    padding-inline: 4%;
+    gap: 35px;
+    min-height: 470px;
+  }
+  .step-content h3 {
+    margin-bottom: 35px;
+  }
+  .step-content p {
+    margin-bottom: 35px;
+  }
+}
+
+// Mobile
+@media (max-width: 768px) {
+  .how-it-works {
+    padding: 42px 6% 55px;
+  }
+  .section-heading {
+    margin: 0px;
+    span {
+      font-size: 15px;
+      letter-spacing: 2px;
+    }
+    h2 {
+      font-size: clamp(42px, 8vw, 46px);
+    }
+  }
+  .step-row {
+    min-height: 550px;
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: 32px;
+    top: 12px;
+    padding: 30px 3%;
+  }
+  .step-content {
+    .step-number {
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+    h3 {
+      font-size: 23px;
+      margin-bottom: 24px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.35;
+      margin-bottom: 28px;
+    }
+  }
+  .step-visual {
+    width: min(55%, 220px);
+  }
+}
+
+// Small phones
+@media (max-width: 380px) {
+  .step-row {
+    min-height: 620px;
+    gap: 25px;
+  }
+  .step-content h3 {
+    font-size: 21px;
+  }
+  .step-content p {
+    font-size: 16px;
+  }
+  .step-visual {
+    width: min(62%, 200px);
+  }
+  .template-slider .template-card img {
+    height: 200px;
+  }
+}
+
+// Accessibility
+@media (prefers-reduced-motion: reduce) {
+  .step-link,
+  .step-visual img,
+  .step-visual .card-back {
+    transition: none;
+  }
+}

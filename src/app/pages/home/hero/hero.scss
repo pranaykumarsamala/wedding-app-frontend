@@ -1,0 +1,388 @@
+:host {
+  display: block;
+}
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #f7f3e8;
+  border-top: 3px solid #430814;
+  color: #0d0000;
+}
+
+.hero-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 42px 7.5% 45px;
+  position: relative;
+  .msg-icon {
+    position: absolute;
+    right: 18px;
+    bottom: 28px;
+    width: 42px;
+    height: 42px;
+    padding: 12px;
+    background: #3e000c;
+    border-radius: 50%;
+    object-fit: contain;
+    z-index: 9999;
+    cursor: pointer;
+  }
+}
+
+.hero-row {
+  min-height: calc(100vh - 90px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 30px 20px 35px 0;
+}
+
+.hero-subtitle {
+  margin-bottom: 28px;
+  font-size: 16px;
+  letter-spacing: 4px;
+  font-weight: 400;
+  font-family: 'Proxima Nova';
+}
+
+.hero-title {
+  margin: 0 0 30px;
+  font-size: clamp(48px, 5.7vw, 88px);
+  font-weight: 700;
+  letter-spacing: 4px;
+  font-family: 'Pavot', sans-serif;
+  line-height: 1.2;
+  span {
+    display: block;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+  }
+}
+
+.hero-description {
+  max-width: 640px;
+  margin-top: 32px;
+  font-size: 18px;
+  // line-height: 1.35;
+  p {
+    margin-bottom: 22px;
+  }
+  strong {
+    font-weight: 700;
+  }
+}
+
+.browse-btn {
+  min-width: 200px;
+  margin-top: 12px;
+  padding: 10px 27px;
+  border: 0;
+  border-radius: 40px;
+  background: #000743;
+  color: #f7f3e8;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+  &:hover {
+    background: #400916;
+    transform: translateY(-2px);
+  }
+  &:focus-visible {
+    outline: 3px solid #bca66c;
+    outline-offset: 4px;
+  }
+}
+
+// Right preview area
+.hero-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.preview-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 510px;
+  perspective: 1200px;
+}
+
+.device {
+  position: relative;
+  transition:
+    opacity 0.3s ease,
+    transform 0.35s ease;
+}
+
+.hidden-device {
+  display: none !important;
+}
+
+// Phone mockup
+.mobile-device {
+  // width: 100%;
+  height: 600px;
+  padding: 8px;
+  &.active {
+    animation: device-enter 0.35s ease;
+  }
+}
+
+.invitation-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+// Desktop monitor mockup
+.desktop-device {
+  width: min(100%, 500px);
+  padding-bottom: 46px;
+  &.active {
+    animation: device-enter 0.35s ease;
+  }
+}
+
+.desktop-screen {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  padding: 7px;
+  overflow: hidden;
+  border: 2px solid #282828;
+  border-radius: 12px;
+  background: #101010;
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.22);
+  .invitation-image {
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+// Device selector
+.device-switcher {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin: 20px 0 5px;
+  padding-left: 50px;
+}
+
+.device-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1.5px solid #3e000c;
+  border-radius: 50%;
+  background: transparent;
+  color: #3e000c;
+  font-size: 20px;
+  transition: all 0.2s ease;
+  &:hover,
+  &.selected {
+    background: #3e000c;
+    color: #f7f3e8;
+  }
+}
+
+// Floating chat icon
+.chat-button {
+  position: absolute;
+  right: 18px;
+  bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: #050505;
+  color: white;
+  font-size: 21px;
+}
+
+// Templates section
+.templates-section {
+  padding: 100px 20px;
+  // background:
+  h2 {
+    margin: 15px 0;
+    font-size: clamp(32px, 4vw, 55px);
+  }
+}
+
+.templates-label {
+  font-size: 12px;
+  letter-spacing: 4px;
+}
+
+@keyframes device-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+// Tablets
+@media (max-width: 991.98px) {
+  .hero-container {
+    padding: 40px 5%;
+  }
+  .hero-title {
+    font-size: clamp(43px, 6vw, 65px);
+    letter-spacing: -1.8px;
+  }
+  .hero-subtitle {
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+  .hero-description {
+    font-size: 14px;
+  }
+  .preview-stage {
+    min-height: 430px;
+  }
+  .mobile-device {
+    width: 195px;
+    height: 395px;
+    border-radius: 36px;
+  }
+  .phone-screen {
+    border-radius: 28px;
+  }
+  .desktop-device {
+    width: 100%;
+  }
+}
+
+// Mobile
+@media (max-width: 767.98px) {
+  .hero-section {
+    min-height: auto;
+  }
+  .hero-container {
+    padding: 38px 24px 70px;
+  }
+  .hero-row {
+    min-height: auto;
+  }
+  .hero-content {
+    padding: 10px 0 25px;
+  }
+  .hero-subtitle {
+    margin-bottom: 24px;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+  }
+  .hero-title {
+    margin-bottom: 25px;
+    font-size: clamp(42px, 9vw, 64px);
+    line-height: 0.95;
+    letter-spacing: -1.5px;
+  }
+  .hero-description {
+    margin-top: 25px;
+    font-size: 14px;
+    line-height: 1.55;
+    p {
+      margin-bottom: 18px;
+    }
+  }
+  .browse-btn {
+    width: 100%;
+    min-width: 0;
+    max-width: 310px;
+    padding: 13px 18px;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+  }
+  .hero-preview {
+    padding-top: 15px;
+  }
+  .preview-stage {
+    min-height: 410px;
+  }
+  .mobile-device {
+    width: 205px;
+    height: 405px;
+  }
+  .desktop-device {
+    width: min(100%, 430px);
+  }
+  .device-switcher {
+    margin-top: 8px;
+  }
+  .chat-button {
+    right: 16px;
+    bottom: 16px;
+  }
+  .hero-container .msg-icon {
+    right: 16px;
+    bottom: 16px;
+    width: 38px;
+    height: 38px;
+    padding: 8px;
+  }
+}
+
+// Small mobile
+@media (max-width: 380px) {
+  .hero-container {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+  .hero-title {
+    font-size: 50px;
+    letter-spacing: -0.2px;
+    span {
+      line-height: 1.2;
+    }
+  }
+  .hero-subtitle {
+    font-size: 15px;
+    letter-spacing: 1.8px;
+  }
+  .mobile-device {
+    width: auto;
+    height: 370px;
+  }
+  .preview-stage {
+    min-height: 250px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

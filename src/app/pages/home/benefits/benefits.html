@@ -1,0 +1,71 @@
+<section class="benefits-section">
+    <div class="benefits-header">
+        <h2>BENEFITS:</h2>
+    </div>
+
+    <div class="container benefits-container">
+        <!-- Comparison Table -->
+        <div class="comparison-card">
+            <div class="table-responsive">
+                <table class="table benefits-table mb-0">
+                    <thead>
+                        <tr>
+                            <th class="feature-column">Practical stuff</th>
+                            <th style="color: #00421c;">COD</th>
+                            <th>Agency</th>
+                            <th>In-house</th>
+                            <th>Templates</th>
+                            <th>DIY</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let row of benefits">
+                            <th scope="row" class="feature-column">
+                                {{ row.feature }}
+                            </th>
+
+                            <td *ngFor="let value of row.values" [class.highlight-cell]="
+                  value === '5 days' || value === 'One-time' || value === 'Up to you!'
+                ">
+                                <span *ngIf="value === '✓'" class="status-check" aria-label="Yes">✓</span>
+
+                                <span *ngIf="value === '✕'" class="status-cross" aria-label="No">×</span>
+
+                                <span *ngIf="value !== '✓' && value !== '✕'">
+                  {{ value }}
+                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Optional Add-on -->
+        <div class="addon-section">
+            <p class="eyebrow">OPTIONAL ADD-ON · TICK DURING CHECKOUT</p>
+
+            <h2>Want riva-and-rohan.com instead of ScriptedInvites/your-name?</h2>
+
+            <div class="row addon-content">
+                <div class="col-md-8">
+                    <p>
+                        Add a custom domain at checkout. Pay double your plan — one payment covers both the plan and the domain add-on. Already own a name? You can connect that too.
+                    </p>
+
+                    <p>
+                        Most couples skip this — ScriptedInvites/your-name works just as well. If you're not sure, you can always add it later.
+                    </p>
+                </div>
+
+                <div class="col-md-4 addon-action">
+                    <button type="button" class="learn-more-btn" (click)="learnMore()">
+            <span>LEARN MORE</span>
+            <span class="arrow">⟶</span>
+          </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

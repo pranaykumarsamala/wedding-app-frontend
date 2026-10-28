@@ -1,0 +1,320 @@
+@use 'sass:color';
+// --------------------------------
+// Theme variables
+// --------------------------------
+$header-bg: #3e000c;
+$header-text: #f7f3e8;
+$button-text: #00421c;
+$font-family: 'Proxima Nova';
+$header-height: 82px;
+$mobile-header-height: 66px;
+$header-max-width: 1600px;
+$mobile-breakpoint: 991.98px;
+// --------------------------------
+// Header
+// --------------------------------
+.site-header {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    font-family: $font-family;
+    .custom-navbar {
+        min-height: $header-height;
+        padding: 0;
+        background-color: $header-bg;
+        color: $header-text;
+    }
+    .nav-container {
+        width: 100%;
+        max-width: $header-max-width;
+        min-height: $header-height;
+        margin: 0 auto;
+        padding: 0 7.5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+// --------------------------------
+// Logo
+// --------------------------------
+.brand {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    text-decoration: none;
+    img {
+        display: block;
+        width: auto;
+        max-width: 180px;
+        max-height: 58px;
+        object-fit: contain;
+    }
+}
+
+.brand-mobile {
+    display: none;
+}
+
+// --------------------------------
+// Desktop navigation
+// --------------------------------
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    max-width: 930px;
+    margin-left: auto;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: clamp(20px, 3vw, 48px);
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    .nav-link {
+        position: relative;
+        padding: 8px 0;
+        color: $header-text;
+        font-size: 17px;
+        font-weight: 400;
+        white-space: nowrap;
+        text-decoration: none;
+        transition: opacity 0.2s ease;
+        &:hover {
+            color: $header-text;
+            opacity: 0.75;
+        }
+        &.active::after {
+            position: absolute;
+            bottom: 3px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $header-text;
+            content: '';
+        }
+    }
+}
+
+// --------------------------------
+// Desktop action buttons
+// --------------------------------
+.desktop-actions {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-left: 30px;
+}
+
+.sign-in-link {
+    color: $header-text;
+    font-size: 17px;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    &:hover {
+        color: $header-text;
+        opacity: 0.75;
+    }
+}
+
+.begin-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 131px;
+    min-height: 38px;
+    padding: 8px 20px;
+    border-radius: 30px;
+    background-color: $header-text;
+    color: $button-text;
+    font-size: 16px;
+    font-weight: 700;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    .arrow {
+        font-size: 22px;
+        line-height: 1;
+    }
+    &:hover {
+        background-color: color.adjust($header-text, $lightness: -5%);
+        color: $button-text;
+        transform: translateY(-1px);
+    }
+}
+
+// --------------------------------
+// Mobile elements
+// --------------------------------
+.mobile-actions,
+.mobile-menu {
+    display: none;
+}
+
+// --------------------------------
+// Tablet and mobile
+// --------------------------------
+@media (max-width: $mobile-breakpoint) {
+    .site-header {
+        .custom-navbar {
+            min-height: $mobile-header-height;
+        }
+        .nav-container {
+            min-height: $mobile-header-height;
+            padding: 0 6%;
+        }
+        .brand-desktop,
+        .desktop-nav {
+            display: none;
+        }
+        .brand-mobile {
+            display: inline-flex;
+            align-items: center;
+            img {
+                max-width: 145px;
+                max-height: 48px;
+            }
+        }
+        .mobile-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    }
+    // Mobile sign-in button
+    .mobile-signin {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-width: 137px;
+        min-height: 44px;
+        padding: 0 15px;
+        border: 1px solid $header-text;
+        border-radius: 30px;
+        background-color: $header-text;
+        color: $header-bg;
+        font-size: 14px;
+        letter-spacing: 3px;
+        white-space: nowrap;
+        text-decoration: none;
+        span {
+            font-size: 17px;
+            letter-spacing: 0;
+        }
+    }
+    // Hamburger menu button
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        flex-shrink: 0;
+        width: 46px;
+        height: 46px;
+        padding: 0;
+        border: 1px solid $header-text;
+        border-radius: 50%;
+        background: transparent;
+        cursor: pointer;
+        span {
+            display: block;
+            width: 17px;
+            height: 1.5px;
+            background-color: $header-text;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+        &:focus-visible {
+            outline: 2px solid $header-text;
+            outline-offset: 3px;
+        }
+    }
+    // Mobile dropdown
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        max-height: 0;
+        padding: 0 6%;
+        overflow: hidden;
+        background-color: $header-bg;
+        visibility: hidden;
+        opacity: 0;
+        transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.2s ease, visibility 0.3s ease;
+        a {
+            display: block;
+            padding: 13px 0;
+            border-top: 1px solid rgba(255, 250, 236, 0.18);
+            color: $header-text;
+            font-size: 15px;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+            &:hover {
+                color: $header-text;
+                opacity: 0.7;
+            }
+        }
+        &.show {
+            max-height: 320px;
+            padding-top: 8px;
+            padding-bottom: 15px;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+// --------------------------------
+// Small mobile screens
+// --------------------------------
+@media (max-width: 380px) {
+    .site-header {
+        .nav-container {
+            padding: 0 4%;
+        }
+        .brand-mobile img {
+            max-width: 105px;
+            max-height: 42px;
+        }
+        .mobile-actions {
+            gap: 6px;
+        }
+    }
+    .mobile-signin {
+        min-width: 100px;
+        min-height: 30px;
+        gap: 6px;
+        padding: 0 8px;
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+    .menu-toggle {
+        width: 42px;
+        height: 42px;
+    }
+    .mobile-menu {
+        padding-right: 4%;
+        padding-left: 4%;
+    }
+}
+
+// --------------------------------
+// Reduced motion accessibility
+// --------------------------------
+@media (prefers-reduced-motion: reduce) {
+    .site-header *,
+    .site-header *::before,
+    .site-header *::after {
+        transition: none !important;
+    }
+}

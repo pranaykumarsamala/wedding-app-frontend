@@ -1,0 +1,288 @@
+$color-dark-maroon: #3e000c;
+$color-sky-blue: #65b8dc;
+$color-navy-blue: #000743;
+$color-black: #0d0000;
+$color-dark-green: #00421c;
+$color-off-white: #f7f3e8;
+$color-cream: #f7f3e8;
+// Benefits Section
+.benefits-section {
+    position: relative;
+    min-height: auto;
+    padding: 0 0 28px;
+    overflow: hidden;
+    background: $color-cream;
+    color: $color-black;
+    font-family: 'Pavot', sans-serif;
+}
+
+// Benefits Header
+.benefits-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 450px;
+    // padding: 14px 16px;
+    border-radius: 60px;
+    background: $color-dark-maroon;
+    text-align: center;
+    h2 {
+        margin: 20px auto;
+        color: $color-cream;
+        font-size: 70px;
+        font-weight: 600;
+        letter-spacing: 4px;
+        line-height: 1.3;
+    }
+}
+
+// Benefits Container
+.benefits-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    padding: 0;
+}
+
+// Comparison Card
+.comparison-card {
+    position: relative;
+    margin: 130px 0 32px;
+    padding: 22px 22px;
+    border: 1px solid $color-black;
+    border-radius: 7px;
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    background: $color-off-white;
+}
+
+// Benefits Table
+.benefits-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    color: $color-black;
+    font-size: 20px;
+    font-weight: 600;
+    th,
+    td {
+        padding: 12px 5px;
+        border: 0;
+        background: transparent;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 1.35;
+        overflow-wrap: normal;
+    }
+    thead th {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid $color-black;
+        font-size: 21px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+    tbody th,
+    tbody td {
+        height: 30px;
+    }
+    .feature-column {
+        width: 28%;
+        text-align: left;
+    }
+    .status-check {
+        color: $color-dark-green;
+        font-size: 15px;
+        font-weight: 800;
+    }
+    .status-cross {
+        color: $color-black;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1;
+    }
+    .highlight-cell {
+        color: $color-dark-green;
+        font-weight: 800;
+    }
+}
+
+// Add-on Section
+.addon-section {
+    font-style: normal;
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    padding: 0;
+    .eyebrow {
+        margin-bottom: 14px;
+        font-size: 14px;
+        font-weight: 500;
+        font-style: normal;
+        letter-spacing: 2px;
+    }
+    h2 {
+        margin: 0 0 30px;
+        font-size: 30px;
+        font-weight: 600;
+        // line-height: 1.6;
+    }
+}
+
+// Add-on Content
+.addon-content {
+    align-items: flex-end;
+    p {
+        margin-bottom: 24px;
+        color: $color-dark-maroon;
+        font-size: 21px;
+        font-weight: 400;
+        line-height: 1.25;
+    }
+}
+
+// Add-on Action
+.addon-action {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 4px;
+}
+
+// Learn More Button
+.learn-more-btn {
+    display: inline-flex;
+    min-width: 92px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 8px 14px;
+    border: 1px solid $color-dark-green;
+    border-radius: 30px;
+    background: transparent;
+    color: $color-dark-green;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    .arrow {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 1;
+    }
+    &:hover {
+        background: $color-dark-green;
+        color: $color-cream;
+    }
+    &:focus-visible {
+        outline: 2px solid $color-dark-green;
+        outline-offset: 3px;
+    }
+}
+
+// Tablet
+@media (max-width: 767px) {
+    .benefits-section {
+        min-height: auto;
+        padding-bottom: 30px;
+    }
+    .benefits-header {
+        height: 220px;
+        border-radius: 26px;
+        h2 {
+            font-size: 27px;
+        }
+    }
+    .benefits-container {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    .comparison-card {
+        margin-top: 65px;
+        padding: 10px 12px;
+        overflow: hidden;
+    }
+    .benefits-table {
+        min-width: 500px;
+        font-size: 15px;
+    }
+    .addon-section {
+        h2 {
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+    }
+    .addon-content {
+        p {
+            font-size: 12px;
+            line-height: 1.45;
+        }
+    }
+    .addon-action {
+        justify-content: flex-start;
+        padding-top: 12px;
+    }
+}
+
+// Mobile
+@media (max-width: 480px) {
+    .benefits-header {
+        height: 190px;
+        padding-top: 18px;
+        border-radius: 22px;
+        h2 {
+            font-size: 40px;
+            margin: 0px auto;
+        }
+    }
+    .benefits-container {
+        padding: 0 14px;
+    }
+    .comparison-card {
+        margin-top: 80px;
+        margin-bottom: 28px;
+        padding: 10px 8px;
+        border-radius: 6px;
+    }
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .benefits-table {
+        min-width: 490px;
+        th,
+        td {
+            padding: 8px 4px;
+        }
+        thead th {
+            font-size: 15px;
+        }
+        .feature-column {
+            width: 28%;
+        }
+    }
+    .addon-section {
+        .eyebrow {
+            font-size: 15px;
+            letter-spacing: 1.5px;
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+    }
+    .addon-content {
+        p {
+            font-size: 16px;
+        }
+    }
+    .addon-action {
+        justify-content: flex-end;
+    }
+}
+
+// Reduced Motion Accessibility
+@media (prefers-reduced-motion: reduce) {
+    .learn-more-btn {
+        transition: none;
+    }
+}

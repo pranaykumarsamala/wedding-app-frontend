@@ -1,0 +1,101 @@
+<section class="hero-section">
+  <div class="container-fluid hero-container">
+    <div class="row align-items-center hero-row">
+      <!-- Left content -->
+      <div class="col-lg-7 col-md-7 hero-content">
+        <p class="hero-subtitle">Wedding &amp; event invitation websites</p>
+
+        <h1 class="hero-title">
+          <span>YOUR STORY.</span>
+          <span>YOUR CELEBRATION.</span>
+          <span>YOUR WEBSITE.</span>
+        </h1>
+
+        <div class="hero-description">
+          <p>
+            <strong>Scripted Invites</strong> makes it easy to create beautiful, personalised
+            invitation websites for every special occasion. Choose from thoughtfully designed
+            templates, add your story, photos, event details and countdown, and share everything
+            with one simple link.
+          </p>
+
+          <p>
+            From weddings and birthdays to housewarmings, anniversaries, cultural events, concerts
+            and inaugurations — create an invitation website that makes your celebration truly
+            memorable.
+          </p>
+        </div>
+
+        <button type="button" class="browse-btn" (click)="browseTemplates()">
+          BROWSE TEMPLATES
+        </button>
+      </div>
+
+      <!-- Right preview -->
+      <div class="col-lg-5 col-md-5 hero-preview">
+        <div class="preview-stage">
+          <!-- Mobile preview -->
+          <div
+            class="device mobile-device"
+            [class.active]="activeView === 'mobile'"
+            [class.hidden-device]="activeView !== 'mobile'"
+          >
+            <!-- <div class="phone-notch"></div> -->
+
+            <!-- <div class="phone-screen"> -->
+            <img
+              src="assets/home-page/iPhone-13.png"
+              alt="Wedding invitation mobile preview"
+              class="invitation-image"
+            />
+            <!-- </div> -->
+          </div>
+
+          <!-- Desktop preview -->
+          <div
+            class="device desktop-device"
+            [class.active]="activeView === 'desktop'"
+            [class.hidden-device]="activeView !== 'desktop'"
+          >
+            <!-- <div class="desktop-screen"> -->
+            <img
+              src="assets/home-page/MacBook-Pro-16.png"
+              alt="Wedding invitation desktop preview"
+              class="invitation-image"
+            />
+            <!-- </div> -->
+          </div>
+        </div>
+
+        <!-- Device toggle buttons -->
+        <div class="device-switcher">
+          <button
+            type="button"
+            class="device-btn"
+            [class.selected]="activeView === 'mobile'"
+            [attr.aria-pressed]="activeView === 'mobile'"
+            aria-label="Show mobile preview"
+            (click)="setView('mobile')"
+          >
+            <!-- <img src="/assets/home-page/web .svg" alt="phone" /> -->
+            <i class="fa-solid fa-mobile-screen-button"></i>
+          </button>
+
+          <button
+            type="button"
+            class="device-btn"
+            [class.selected]="activeView === 'desktop'"
+            [attr.aria-pressed]="activeView === 'desktop'"
+            aria-label="Show desktop preview"
+            (click)="setView('desktop')"
+          >
+            <!-- <img src="/assets/home-page/phone-icon.png" alt="phone" /> -->
+            <i class="fa-solid fa-laptop"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <img src="/assets/home-page/message-icon.svg" alt="message" class="msg-icon" />
+  </div>
+</section>

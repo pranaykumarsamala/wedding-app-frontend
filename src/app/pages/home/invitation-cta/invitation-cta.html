@@ -1,0 +1,45 @@
+<section class="invitation-section py-5">
+    <div class="container">
+        <div class="row align-items-center g-4 g-lg-5">
+            <!-- Left Column -->
+            <div class="col-12 col-lg-6 pe-lg-5">
+                <h1 class="invitation-title mb-4">SEND YOUR<br />INVITATION.</h1>
+                <p class="invitation-description mb-4">
+                    {{ description }}
+                </p>
+                <a href="#" class="btn btn-learn-more">
+          LEARN MORE
+          <svg
+            class="ms-2"
+            width="24"
+            height="12"
+            viewBox="0 0 24 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 1L23 6M23 6L18 11M23 6H1"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+            </div>
+
+            <!-- Right Column with Vertical Divider -->
+            <div class="col-12 col-lg-6 border-left-divider">
+                <div class="info-grid">
+                    <div *ngFor="let item of infoList" class="info-row">
+                        <span class="info-label">{{ item.label }}</span>
+                        <span class="info-value">
+              {{ item.value }}
+              <small *ngIf="item.subValue"> {{ item.subValue }}</small>
+            </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

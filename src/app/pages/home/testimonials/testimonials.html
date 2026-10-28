@@ -1,0 +1,32 @@
+<div class="testimonal-bg" style="background-color: #f7f3e8">
+    <section class="testimonial-section">
+        <h2>What Do Those Who Have Used It Say?</h2>
+
+        <div class="swiper testimonialSwiper" #testimonialSlider>
+            <div class="swiper-wrapper">
+                @for (review of reviews; track review.name) {
+                <div class="swiper-slide">
+                    <div class="review-card">
+                        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+
+                        <p class="review-text">"{{ review.message }}"</p>
+
+                        <div class="review-user">
+                            <div class="avatar">
+                                {{ review.name.charAt(0) }}
+                            </div>
+
+                            <div class="user-details">
+                                <h3>{{ review.name }}</h3>
+                                <span>{{ review.date }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+</div>

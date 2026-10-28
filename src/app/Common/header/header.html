@@ -1,0 +1,60 @@
+<header class="site-header">
+    <nav class="navbar custom-navbar">
+        <div class="container-fluid nav-container">
+            <!-- Desktop Logo -->
+            <a class="brand brand-desktop" href="/">
+                <span class="scripted-logo">
+          <img src="assets/home-page/logo .png" alt="scripted" />
+        </span>
+            </a>
+
+            <!-- Mobile Logo -->
+            <a class="brand brand-mobile" href="/">
+                <img src="assets/home-page/logo .png" alt="" />
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="desktop-nav">
+                <ul class="navbar-nav nav-links">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/templates">TEMPLATES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pricing">PRICING</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tutorial">TUTORIAL</a>
+                    </li>
+                </ul>
+
+                <div class="desktop-actions">
+                    <a href="/login" class="sign-in-link">SIGN IN</a>
+                    <a href="/begin" class="begin-btn"> BEGIN <span class="arrow">⟶</span> </a>
+                </div>
+            </div>
+
+            <!-- Mobile Actions -->
+            <div class="mobile-actions">
+                <a href="/login" class="mobile-signin"> SIGN IN <span>→</span> </a>
+
+                <button type="button" class="menu-toggle" aria-label="Toggle navigation" [attr.aria-expanded]="isMenuOpen" (click)="isMenuOpen = !isMenuOpen">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div class="mobile-menu" [class.show]="isMenuOpen">
+            <a href="/" (click)="isMenuOpen = false">HOME</a>
+            <a href="/templates" (click)="isMenuOpen = false">TEMPLATES</a>
+            <a href="/pricing" (click)="isMenuOpen = false">PRICING</a>
+            <a href="/tutorial" (click)="isMenuOpen = false">TUTORIAL</a>
+            <a href="/begin" (click)="isMenuOpen = false">BEGIN →</a>
+        </div>
+    </nav>
+</header>

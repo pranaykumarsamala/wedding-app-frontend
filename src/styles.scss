@@ -6,7 +6,7 @@ body app-wedding-invite {
   font-family: 'Playfair Display', serif;
   width: 100%;
   margin: 0;
-  background-image: url('/assets/template-one/one/total-bg-final -mobile-2.png');
+  background-image: url('/assets/template-one/one/total-bg-final.png');
   background-size: 100% auto;
   background-position: top center;
   background-repeat: no-repeat;
@@ -18,11 +18,140 @@ body app-wedding-invite {
   font-weight: 900;
 }
 
+// home page font
+
+/* Heading Font: Pavot */
+
+/* Pavot Font */
+
+@font-face {
+  font-family: 'Pavot';
+  src: url('/assets/home-page/fonts/Pavot-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pavot';
+  src: url('/assets/home-page/fonts/Pavot-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pavot';
+  src: url('/assets/home-page/fonts/Pavot-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pavot';
+  src: url('/assets/home-page/fonts/Pavot-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Proxima Nova Font body*/
+
+/* Proxima Nova Regular */
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('/assets/home-page/fonts/Proxima Nova/ProximaNova-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Proxima Nova Thin */
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('/assets/home-page/fonts/Proxima Nova/Proxima Nova Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Proxima Nova Light */
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('/assets/home-page/fonts/Proxima Nova/Proxima Nova Alt Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Proxima Nova Bold */
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('/assets/home-page/fonts/Proxima Nova/Proxima Nova Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Proxima Nova ExtraBold */
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('/assets/home-page/fonts/Proxima Nova/Proxima Nova Extrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Proxima Nova Black */
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('/assets/home-page/fonts/Proxima Nova/Proxima Nova Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Proxima Nova Alt Thin */
+
+@font-face {
+  font-family: 'Proxima Nova Alt';
+  src: url('/assets/home-page/fonts/Proxima Nova/Proxima Nova Alt Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Proxima Nova Alt Bold */
+
+@font-face {
+  font-family: 'Proxima Nova Alt';
+  src: url('/assets/home-page/fonts/Proxima Nova/Proxima Nova Alt Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+// SCSS Color Variables
+$color-dark-maroon: #3e000c;
+$color-sky-blue: #65b8dc;
+$color-navy-blue: #000743;
+$color-black: #0d0000;
+$color-dark-green: #00421c;
+$color-off-white: #fffaec;
+$color-cream: #f7f3e8;
+
 /* Mobile Background */
 
 @media (max-width: 480px) {
-  body app-wedding-invite {
-    background-image: url('/assets/template-one/one/total-bg-final -mobile-2.png');
+  body .hero-section {
+    background-image: url('/assets/template-one/one/total-bg-final.png');
     background-position: top center;
     background-repeat: no-repeat;
     background-size: 100% auto;
