@@ -127,32 +127,66 @@ host {
   perspective: 1200px;
 }
 
+/* Common device styles */
+
 .device {
   position: relative;
   flex: 0 1 auto;
   min-width: 0;
   max-width: 100%;
+  opacity: 1;
+  visibility: visible;
+  transform: translate3d(0, 0, 0) scale(1);
+  transform-origin: center center;
   transition:
-    opacity 0.3s ease,
-    transform 0.35s ease;
+    opacity 0.8s ease-in-out,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 0s;
+  will-change: opacity, transform;
 }
+
+/* Hide without display:none */
 
 .hidden-device {
-  display: none !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate3d(-50%, -50%, 0) scale(0.92);
+  transition:
+    opacity 0.8s ease-in-out,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 0.9s;
 }
 
-// Mobile Device Image
+/* Mobile preview */
+
 .mobile-device {
   width: 100%;
   max-width: 260px;
   height: auto;
-  padding: 0;
-  &.active {
-    animation: device-enter 0.35s ease;
-  }
 }
 
-// Common Preview Image
+/* Desktop preview */
+
+.desktop-device {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+/* Active device */
+
+.device.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* Images */
+
 .invitation-image {
   display: block;
   width: 100%;
@@ -162,17 +196,6 @@ host {
   object-position: center;
   -webkit-user-drag: none;
   user-select: none;
-}
-
-// Desktop Device Image
-.desktop-device {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  padding: 0;
-  &.active {
-    animation: device-enter 0.35s ease;
-  }
 }
 
 // ========================================

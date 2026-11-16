@@ -1,0 +1,27 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  width: 100%;
+  background-image: url('/assets/beach-images/Scripted_BG.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+// Achilleus Script Font
+@font-face {
+  font-family: 'Achilleus Script';
+  src: url('/assets/beach-images/fonts/Achilleus_Script.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Apply Font
+.script-font {
+  font-family: 'Achilleus Script', cursive;
+}
+
+.montserrat-font {
+  font-family: 'Montserrat', sans-serif;
+}

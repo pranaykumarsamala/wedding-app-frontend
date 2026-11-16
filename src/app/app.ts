@@ -31,6 +31,6 @@ export class App {
   private updateLayout(url: string): void {
     const path = url.split('?')[0].split('#')[0];
 
-    this.showHeaderFooter = !['/template-1', '/template-2'].includes(path);
+    this.showHeaderFooter = !['/template-1', '/template-2', '/beach-wedding'].includes(path);
   }
 }

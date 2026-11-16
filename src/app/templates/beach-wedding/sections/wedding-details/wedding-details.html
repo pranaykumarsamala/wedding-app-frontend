@@ -1,0 +1,21 @@
+<div class="nautical-slider">
+  <!-- Nautical frame image -->
+  <img
+    src="http://localhost:4200/assets/beach-images/Scripted_Photo%20Scroll.webp"
+    class="nautical-frame"
+    alt="Nautical frame"
+  />
+
+  <!-- Slider content -->
+  <div class="slider-content">
+    <div class="image-wrapper">
+      <img [src]="images[currentIndex]" alt="Wedding gallery" class="slide-image" />
+
+      <!-- Previous arrow -->
+      <button class="slider-btn prev" (click)="prevSlide()">&#10094;</button>
+
+      <!-- Next arrow -->
+      <button class="slider-btn next" (click)="nextSlide()">&#10095;</button>
+    </div>
+  </div>
+</div>

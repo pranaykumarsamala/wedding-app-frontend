@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 interface BenefitRow {
   feature: string;
+  icon: string;
   values: string[];
 }
 
@@ -15,32 +16,43 @@ interface BenefitRow {
 export class Benefits {
   benefits: BenefitRow[] = [
     {
-      feature: 'Looks & feels like your brand',
-      values: ['✓', '✓', '✓', '✕', 'Depends'],
+      feature: 'Cost',
+      icon: 'fa-solid fa-indian-rupee-sign',
+      values: ['High', 'Moderate', 'Low'],
     },
     {
-      feature: 'Brand + strategy + design',
-      values: ['✓', '✓', 'Sometimes', '✕', '✕'],
+      feature: 'Customization',
+      icon: 'fa-solid fa-pen',
+      values: ['Limited', 'Hard', 'Easy'],
     },
     {
-      feature: 'Time to publish',
-      values: ['5 days', 'Weeks', 'Weeks', 'Depends on you', 'Depends on you'],
+      feature: 'Interactivity',
+      icon: 'fa-solid fa-fingerprint',
+      values: ['Static', 'View-only', 'Highly Interactive'],
     },
     {
-      feature: 'Commitment required',
-      values: ['One-time', 'Retainer', 'Salary', 'None', 'None'],
+      feature: 'Updating',
+      icon: 'fa-solid fa-rotate',
+      values: ['Impossible', 'Difficult', 'Instant'],
     },
     {
-      feature: 'Captions included',
-      values: ['✓', 'Usually', 'Depends', '✕', '✕'],
+      feature: 'Eco Friendly',
+      icon: 'fa-solid fa-leaf',
+      values: ['No', 'Yes', 'Yes'],
     },
     {
-      feature: 'Built around your goals',
-      values: ['✓', 'Usually', 'Depends', '✕', 'Depends'],
+      feature: 'Sharing',
+      icon: 'fa-solid fa-share-nodes',
+      values: [
+        'Limited to Physical Delivery',
+        'Forwardable',
+        'Shareable via Link, WhatsApp & More',
+      ],
     },
     {
-      feature: 'Your involvement',
-      values: ['Up to you!', 'Medium', 'Medium', 'Very high', 'Very high'],
+      feature: 'Delivery Time',
+      icon: 'fa-regular fa-clock',
+      values: ['Several Days', 'Same Day', 'Instant'],
     },
   ];
 

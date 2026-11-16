@@ -1,0 +1,126 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.wedding-hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1064 / 790;
+  background-image: url('/assets/beach-images/Scripted_Landing.webp');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* Curved Wedding Text */
+
+.curved-text {
+  position: absolute;
+  top: 20%;
+  left: 20.5%;
+  width: 15%;
+  height: auto;
+  overflow: visible;
+  transform: rotate(14deg);
+  text {
+    fill: #024a93;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+}
+
+/* Couple Names */
+
+.couple-names {
+  position: absolute;
+  top: 14.5%;
+  left: 18%;
+  width: 63%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 25px);
+  color: #024a93;
+  font-family: 'Achilleus Script', cursive;
+  font-size: clamp(45px, 180px, 195px);
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  transform: rotate(348deg);
+  span {
+    display: inline-block;
+  }
+  .ampersand {
+    font-size: 0.85em;
+  }
+}
+
+/* Tablet Responsive */
+
+@media (max-width: 768px) {
+  .curved-text {
+    top: 22%;
+    left: 11%;
+    width: 23%;
+    text {
+      font-size: 16px;
+      letter-spacing: 0.7px;
+    }
+  }
+  .couple-names {
+    top: 23%;
+    left: 17%;
+    width: 67%;
+    font-size: clamp(40px, 9vw, 72px);
+    gap: 10px;
+  }
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 480px) {
+  .wedding-hero {
+    aspect-ratio: 1064 / 790;
+  }
+  .curved-text {
+    top: 10%;
+    left: 12%;
+    width: 30%;
+    text {
+      font-size: 20px;
+      letter-spacing: 0.4px;
+    }
+  }
+  .couple-names {
+    top: 10.5%;
+    left: 2%;
+    width: 85%;
+    font-size: clamp(30px, 15.5vw, 51px);
+    gap: 5px;
+    transform: rotate(348deg);
+  }
+}
+
+/* Small Mobile */
+
+@media (max-width: 360px) {
+  .curved-text {
+    top: 10%;
+    left: 13%;
+    width: 35%;
+    text {
+      font-size: 17px;
+    }
+  }
+  .couple-names {
+    top: 13%;
+    left: 10%;
+    width: 75%;
+    font-size: 41px;
+    gap: 4px;
+  }
+}

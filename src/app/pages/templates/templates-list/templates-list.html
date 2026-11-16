@@ -1,0 +1,112 @@
+<section class="templates-list-section">
+  <!-- Wedding / Other Events Tabs -->
+  <div class="family-tabs-wrapper">
+    <div class="container custom-container">
+      <div class="family-tabs">
+        <button class="family-tab" [class.active]="!isOtherEvents" (click)="changeFamily(false)">
+          Wedding & related
+
+          <span class="tab-count">{{ weddingCount }}</span>
+        </button>
+
+        <button class="family-tab" [class.active]="isOtherEvents" (click)="changeFamily(true)">
+          Other events
+
+          <span class="tab-count">{{ eventsCount }}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search and Filters -->
+  <div class="filter-wrapper">
+    <div class="container-fluid custom-container">
+      <div class="search-row">
+        <!-- Search Input -->
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <input
+            type="text"
+            [(ngModel)]="searchText"
+            placeholder="Search by name, vibe, or category"
+          />
+
+          <button *ngIf="searchText" class="clear-search" (click)="searchText = ''">&times;</button>
+        </div>
+
+        <!-- Top Picks -->
+        <!-- <button class="top-picks">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          Top Picks
+          <span>
+            {{ templates.length }}
+          </span>
+        </button> -->
+      </div>
+
+      <!-- Category Filters -->
+    </div>
+  </div>
+
+  <!-- Template Cards -->
+
+  <!-- Template Cards -->
+  <div class="container-fluid custom-container">
+    <div class="row templates-grid">
+      <div class="col-12 col-sm-6 col-lg-12" *ngFor="let template of filteredTemplates">
+        <div class="template-card">
+          <div class="template-image">
+            <img [src]="template.image" [alt]="template.name" loading="lazy" />
+
+            <!-- Gradient Overlay -->
+            <div class="template-overlay">
+              <!-- Live Demo Button -->
+              <div class="demo-button-wrapper">
+                <button class="live-demo-btn">
+                  <i class="fa-regular fa-eye"></i>
+                  VIEW LIVE DEMO
+                </button>
+              </div>
+
+              <!-- Bottom Content -->
+              <div class="overlay-bottom">
+                <div class="overlay-info">
+                  <h3>{{ template.name }}</h3>
+
+                  <p>{{ template.vibe }} - {{ template.description }}</p>
+                </div>
+
+                <div class="overlay-actions">
+                  <span class="template-price">
+                    {{ template.price || '₹xxxxx/-' }}
+                  </span>
+
+                  <button class="overlay-use-btn">
+                    USE THIS
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Brand Label -->
+            <!-- <span class="template-brand">
+              {{ template.brand }}
+            </span> -->
+
+            <!-- <span *ngIf="template.topPick" class="featured-label"> TOP PICK </span> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- No Results -->
+      <div class="col-12 no-results" *ngIf="filteredTemplates.length === 0">
+        <h4>No templates found</h4>
+        <p>Try searching with another name or category.</p>
+
+        <button (click)="searchText = ''">Clear search</button>
+      </div>
+    </div>
+  </div>
+</section>

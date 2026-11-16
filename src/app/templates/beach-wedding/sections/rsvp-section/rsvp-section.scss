@@ -1,0 +1,85 @@
+.countdown-section {
+  width: 100%;
+  padding: 30px 20px 15px;
+  background-image: url('/assets/images/paper-texture.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // Blue brush background
+  .countdown-brush {
+    width: 100%;
+    max-width: 1050px;
+    min-height: 310px;
+    background-image: url('/assets/beach-images/Scripted_RSVP.webp');
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      font-family: 'Achilleus Script', cursive;
+      font-size: clamp(55px, 8vw, 90px);
+      font-weight: 400;
+      color: #ffffff;
+      margin: 0;
+      line-height: 1;
+    }
+  }
+  // Countdown heading
+  .countdown-heading {
+    width: 100%;
+    text-align: center;
+    margin-top: 35px;
+    h1 {
+      font-family: 'Achilleus Script', cursive;
+      font-size: clamp(45px, 7vw, 85px);
+      font-weight: 400;
+      color: #004b91;
+      line-height: 1.1;
+      margin: 0;
+    }
+  }
+}
+
+// Tablet
+@media (max-width: 768px) {
+  .countdown-section {
+    padding: 25px 15px 20px;
+    .countdown-brush {
+      min-height: 230px;
+      h2 {
+        font-size: 65px;
+      }
+    }
+    .countdown-heading {
+      margin-top: 25px;
+      h1 {
+        font-size: clamp(42px, 8vw, 60px);
+      }
+    }
+  }
+}
+
+// Mobile
+@media (max-width: 480px) {
+  .countdown-section {
+    padding: 20px 10px;
+    .countdown-brush {
+      min-height: 145px;
+      h2 {
+        font-size: 48px;
+      }
+    }
+    .countdown-heading {
+      margin-top: 20px;
+      h1 {
+        font-size: clamp(35px, 9vw, 45px);
+      }
+    }
+  }
+}

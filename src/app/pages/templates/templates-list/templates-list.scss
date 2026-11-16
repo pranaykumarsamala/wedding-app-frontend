@@ -1,0 +1,705 @@
+:host {
+  display: block;
+  width: 100%;
+  font-family: 'Proxima Nova', serif;
+}
+
+/* =========================================
+   MAIN SECTION
+========================================= */
+
+.templates-list-section {
+  max-width: 1300px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding-bottom: 60px;
+  // background-color: #f7f3e8;
+  padding: 0 60px 60px;
+}
+
+.custom-container {
+  width: 100%;
+  max-width: 1440px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   WEDDING / OTHER EVENTS TABS
+========================================= */
+
+.family-tabs-wrapper {
+  width: 100%;
+  // border-bottom: 1px solid #e8dac8;
+}
+
+.family-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  .family-tab {
+    position: relative;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 18px 22px 16px;
+    color: #3e000c;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    .tab-count {
+      font-size: 12px;
+      margin-left: 5px;
+      color: #3e000c;
+    }
+    &.active {
+      color: #3e000c;
+      border-bottom-color: #3e000c;
+      .tab-count {
+        color: #3e000c;
+      }
+    }
+    &:hover {
+      color: #3e000c;
+    }
+  }
+}
+
+/* =========================================
+   SEARCH SECTION
+========================================= */
+
+.filter-wrapper {
+  width: 100%;
+  padding: 18px 0 15px;
+  // border-bottom: 1px solid #e8dac8;
+}
+
+.search-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+/* Search Input */
+
+.search-box {
+  flex: 1;
+  height: 48px;
+  background: #f7f3e8;
+  border: 1px solid #3e000c;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  gap: 13px;
+  transition: border-color 0.3s ease;
+  i {
+    color: #3e000c;
+    font-size: 16px;
+  }
+  input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    background: transparent;
+    color: #3e000c;
+    font-size: 15px;
+    &::placeholder {
+      color: #3e000c;
+    }
+  }
+  .clear-search {
+    flex-shrink: 0;
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    color: #3e000c;
+    cursor: pointer;
+  }
+  &:focus-within {
+    border-color: #3e000c;
+  }
+}
+
+/* Top Picks */
+
+.top-picks {
+  height: 42px;
+  padding: 0 18px;
+  border: 1px solid #3e000c;
+  border-radius: 25px;
+  background: transparent;
+  color: #3e000c;
+  font-size: 14px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: 0.3s;
+  i {
+    margin-right: 5px;
+  }
+  span {
+    margin-left: 5px;
+    font-size: 12px;
+    color: #3e000c;
+  }
+  &:hover {
+    background: #3e000c;
+    color: #f7f3e8;
+    span {
+      color: #f7f3e8;
+    }
+  }
+}
+
+/* =========================================
+   TEMPLATE GRID
+========================================= */
+
+.templates-grid {
+  margin-top: 28px;
+  row-gap: 25px;
+}
+
+.templates-grid > div[class*='col-'] {
+  display: flex;
+}
+
+/* =========================================
+   TEMPLATE CARD
+========================================= */
+
+.template-card {
+  width: 100%;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: #f7f3e8;
+    border-color: #f7f3e8;
+    box-shadow: 0 10px 25px rgba(62, 0, 12, 0.08);
+  }
+}
+
+/* =========================================
+   TEMPLATE IMAGE
+========================================= */
+
+.template-image {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 30px;
+  background: #000743;
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    // object-fit: contain;
+    object-position: center;
+    transition: transform 0.7s ease;
+  }
+}
+
+/* =========================================
+   TEMPLATE BRAND
+========================================= */
+
+.template-brand {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 3;
+  padding: 7px 15px;
+  background: #f7f3e8;
+  color: #3e000c;
+  border-radius: 25px;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.featured-label {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 3;
+  padding: 7px 12px;
+  background: #3e000c;
+  color: #f7f3e8;
+  border-radius: 20px;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+/* =========================================
+   HOVER OVERLAY
+========================================= */
+
+.template-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px 30px;
+  opacity: 0;
+  visibility: hidden;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.02) 5%,
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 35, 0.65) 55%,
+    rgba(0, 7, 67, 0.98) 82%,
+    #000743 100%
+  );
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
+}
+
+/* =========================================
+   LIVE DEMO BUTTON
+========================================= */
+
+.demo-button-wrapper {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(75%, 250px);
+}
+
+.live-demo-btn {
+  width: 100%;
+  min-height: 58px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 50px;
+  background: #f7f3e8;
+  color: #3e000c;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  i {
+    margin-right: 8px;
+    font-size: 22px;
+  }
+  &:hover {
+    background: #fffaec;
+    transform: scale(1.04);
+  }
+}
+
+/* =========================================
+   BOTTOM OVERLAY CONTENT
+========================================= */
+
+.overlay-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 25px 35px 30px;
+  color: #f7f3e8;
+}
+
+/* Template Name and Description */
+
+.overlay-info {
+  flex: 1;
+  min-width: 0;
+  h3 {
+    font-size: clamp(23px, 30px, 35px);
+    font-weight: 600;
+    line-height: 1.15;
+    color: #f7f3e8;
+    margin: 0 0 8px;
+  }
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #f7f3e8;
+    margin: 0;
+  }
+}
+
+/* =========================================
+   PRICE AND USE BUTTON
+========================================= */
+
+.overlay-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-shrink: 0;
+}
+
+/* Price */
+
+.template-price {
+  min-width: 120px;
+  padding: 10px 16px;
+  border: 1px solid #f7f3e8;
+  border-radius: 25px;
+  color: #f7f3e8;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Use This */
+
+.overlay-use-btn {
+  min-width: 120px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 25px;
+  background: #fffaec;
+  color: #3e000c;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  i {
+    margin-left: 12px;
+    font-size: 18px;
+  }
+  &:hover {
+    background: #f7f3e8;
+    transform: translateX(3px);
+  }
+}
+
+/* =========================================
+   DESKTOP HOVER EFFECT
+========================================= */
+
+@media (hover: hover) and (pointer: fine) {
+  .template-card {
+    &:hover {
+      .template-image img {
+        transform: scale(1.06);
+      }
+      .template-overlay {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+/* =========================================
+   NO RESULTS
+========================================= */
+
+.no-results {
+  width: 100%;
+  text-align: center;
+  padding: 70px 15px;
+  h4 {
+    color: #3e000c;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  p {
+    color: #0d0000;
+    font-size: 15px;
+  }
+  button {
+    background: #3e000c;
+    color: #f7f3e8;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 22px;
+    cursor: pointer;
+    &:hover {
+      background: #3e000c;
+    }
+  }
+}
+
+/* =========================================
+   LARGE LAPTOP
+========================================= */
+
+@media (max-width: 1199px) {
+  .custom-container {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .template-image {
+    height: 350px;
+  }
+  .overlay-bottom {
+    padding: 22px;
+    gap: 14px;
+  }
+  .overlay-actions {
+    gap: 10px;
+  }
+  .template-price {
+    min-width: 115px;
+    font-size: 13px;
+  }
+  .overlay-use-btn {
+    min-width: 135px;
+    font-size: 13px;
+  }
+  .overlay-info h3 {
+    font-size: 28px;
+  }
+  .overlay-info p {
+    font-size: 14px;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+  .custom-container {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+  .templates-grid {
+    row-gap: 20px;
+  }
+  .template-image {
+    height: 330px;
+  }
+  .template-overlay {
+    padding: 20px;
+  }
+  .overlay-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+  }
+  .overlay-info {
+    width: 100%;
+    h3 {
+      font-size: 26px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+  .overlay-actions {
+    width: 100%;
+    gap: 10px;
+  }
+  .template-price {
+    flex: 1;
+    min-width: 0;
+  }
+  .overlay-use-btn {
+    flex: 1;
+    min-width: 0;
+  }
+  .demo-button-wrapper {
+    width: 80%;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+  .custom-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  /* Tabs */
+  .family-tabs {
+    .family-tab {
+      padding: 15px 13px;
+      font-size: 13px;
+    }
+  }
+  /* Search */
+  .filter-wrapper {
+    padding: 15px 0;
+  }
+  .search-row {
+    flex-wrap: wrap;
+  }
+  .search-box {
+    flex-basis: 100%;
+    height: 44px;
+  }
+  .top-picks {
+    height: 38px;
+    font-size: 12px;
+  }
+  /* Grid */
+  .templates-grid {
+    margin-top: 18px;
+    row-gap: 20px;
+  }
+  /* Cards */
+  .template-image {
+    height: 360px;
+  }
+  /* Always show overlay on touch devices */
+  .template-overlay {
+    opacity: 1;
+    visibility: visible;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.02) 5%,
+      rgba(0, 0, 0, 0.2) 30%,
+      rgba(0, 0, 35, 0.7) 55%,
+      rgba(0, 7, 67, 0.98) 82%,
+      #000743 100%
+    );
+  }
+  .demo-button-wrapper {
+    top: 40%;
+    width: 80%;
+  }
+  .live-demo-btn {
+    min-height: 48px;
+    font-size: 14px;
+    i {
+      font-size: 18px;
+    }
+  }
+  .overlay-bottom {
+    padding: 18px;
+    gap: 13px;
+  }
+  .overlay-info {
+    h3 {
+      font-size: 25px;
+    }
+    p {
+      font-size: 13px;
+      line-height: 1.5;
+    }
+  }
+  .overlay-actions {
+    width: 100%;
+    gap: 8px;
+  }
+  .template-price {
+    min-width: 0;
+    flex: 1;
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+  .overlay-use-btn {
+    min-width: 125px;
+    padding: 10px;
+    font-size: 12px;
+    i {
+      margin-left: 5px;
+      font-size: 14px;
+    }
+  }
+  .template-brand {
+    top: 12px;
+    left: 12px;
+    padding: 6px 12px;
+    font-size: 9px;
+  }
+  .featured-label {
+    top: 12px;
+    right: 12px;
+    font-size: 9px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 575px) {
+  .templates-grid > div[class*='col-'] {
+    width: 100%;
+  }
+  .template-image {
+    height: 340px;
+    border-radius: 22px;
+  }
+  .template-card {
+    border-radius: 22px;
+  }
+  .template-overlay {
+    padding: 15px;
+  }
+  .demo-button-wrapper {
+    width: 85%;
+  }
+  .overlay-bottom {
+    padding: 16px;
+    gap: 12px;
+  }
+  .overlay-info {
+    h3 {
+      font-size: 23px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+  .overlay-actions {
+    gap: 7px;
+  }
+  .template-price {
+    font-size: 11px;
+    padding: 9px 6px;
+  }
+  .overlay-use-btn {
+    min-width: 115px;
+    padding: 9px;
+    font-size: 11px;
+  }
+  .templates-list-section {
+    padding: 0px 0px;
+  }
+}
+
+/* =========================================
+   EXTRA SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .family-tabs {
+    .family-tab {
+      padding: 13px 9px;
+      font-size: 12px;
+    }
+  }
+  .template-image {
+    height: 310px;
+  }
+  .overlay-info {
+    h3 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 11px;
+    }
+  }
+  .live-demo-btn {
+    font-size: 12px;
+  }
+  .overlay-use-btn {
+    min-width: 105px;
+    font-size: 10px;
+  }
+}
